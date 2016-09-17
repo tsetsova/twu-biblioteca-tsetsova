@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 
-public class BibliotecaAppTest {
+public class BibliotecaTest {
 
     private TestConsole console = new TestConsole();
     private TestInput input = new TestInput();
