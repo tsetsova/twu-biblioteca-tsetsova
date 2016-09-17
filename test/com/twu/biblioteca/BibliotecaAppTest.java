@@ -18,6 +18,14 @@ public class BibliotecaAppTest {
     }
 
     @Test
+    public void DisplaysAMenu() {
+        biblioteca.menu();
+        assertEquals("Menu:\n " +
+                     "1: List books\n" +
+                     "Write the number of the option you want displayed.", console.printed());
+    }
+
+    @Test
     public void DisplaysAListOfBooks() {
         biblioteca.list();
         assertEquals("The Well-Grounded Rubyist | David A. Black | 2009\n" +
