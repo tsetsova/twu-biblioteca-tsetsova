@@ -16,7 +16,7 @@ public class AppTest {
         input.addCommand("2");
         app.run();
         assertEquals("Welcome to Biblioteca\n" +
-                     "Menu:\n " +
+                     "Menu:\n" +
                      "1: List books\n" +
                      "2: Quit\n" +
                      "Write the number of the option you want displayed.\n" +

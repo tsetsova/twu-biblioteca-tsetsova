@@ -21,7 +21,7 @@ public class BibliotecaAppTest {
     @Test
     public void DisplaysAMenu() {
         biblioteca.menu();
-        assertEquals("Menu:\n " +
+        assertEquals("Menu:\n" +
                      "1: List books\n" +
                      "2: Quit\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
@@ -43,7 +43,7 @@ public class BibliotecaAppTest {
         biblioteca.chooseOption();
 
         assertEquals("Please choose a valid menu option!\n" +
-                     "Menu:\n " +
+                     "Menu:\n" +
                      "1: List books\n" +
                      "2: Quit\n" +
                      "Write the number of the option you want displayed.\n", console.printed());

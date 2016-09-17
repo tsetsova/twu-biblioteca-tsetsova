@@ -15,7 +15,7 @@ class Biblioteca {
     }
 
     void menu() {
-        console.printToScreen("Menu:\n " +
+        console.printToScreen("Menu:\n" +
                               "1: List books\n" +
                               "2: Quit\n" +
                               "Write the number of the option you want displayed.");
