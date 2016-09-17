@@ -9,7 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class BibliotecaAppTest {
 
     private TestConsole console = new TestConsole();
-    private BibliotecaApp biblioteca = new BibliotecaApp(console);
+    private TestInput input = new TestInput();
+    private BibliotecaApp biblioteca = new BibliotecaApp(console, input);
 
     @Test
     public void DisplaysAGreetingMessage() {
@@ -26,21 +27,37 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void DisplaysAListOfBooks() {
-        biblioteca.list();
+    public void CanChooseAnOptionFromAMenu() {
+        input.setMessage("1");
+        biblioteca.chooseOption();
+
         assertEquals("The Well-Grounded Rubyist | David A. Black | 2009\n" +
-                     "Clean Code | Robert Cecil Martin | 2008\n" +
-                     "The Software Crafstman | Sandro Mancuso | 2014", console.printed());
+                "Clean Code | Robert Cecil Martin | 2008\n" +
+                "The Software Crafstman | Sandro Mancuso | 2014", console.printed());
     }
 
 
-    private class TestConsole implements Console{
+    private class TestConsole implements Console {
         private String printed = "";
+
         public void printToScreen(String message) {
             printed += message;
         }
-        public String printed() {
+
+        String printed() {
             return printed;
+        }
+    }
+
+    private class TestInput implements Input {
+        private String message;
+
+        void setMessage(String message) {
+            this.message = message;
+        }
+
+        public String read() {
+            return message;
         }
     }
 }
