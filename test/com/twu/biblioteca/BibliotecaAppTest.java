@@ -3,8 +3,6 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 
-import java.util.LinkedList;
-
 import static org.junit.Assert.assertEquals;
 
 
@@ -12,7 +10,7 @@ public class BibliotecaAppTest {
 
     private TestConsole console = new TestConsole();
     private TestInput input = new TestInput();
-    private BibliotecaApp biblioteca = new BibliotecaApp(console, input);
+    private Biblioteca biblioteca = new Biblioteca(console, input);
 
     @Test
     public void DisplaysAGreetingMessage() {
@@ -59,31 +57,4 @@ public class BibliotecaAppTest {
         assertEquals("Goodbye! Enjoy your books.\n", console.printed());
     }
 
-    private class TestConsole implements Console {
-        private String printed = "";
-
-        public void printToScreen(String message) {
-            printed += message + "\n";
-        }
-
-        String printed() {
-            return printed;
-        }
-    }
-
-    private class TestInput implements Input {
-        private LinkedList<String> commands = new LinkedList<String>();
-
-        void addCommand(String command) {
-            this.commands.add(command);
-        }
-
-        public String read() {
-            try {
-                return this.commands.remove();
-            } catch(RuntimeException exception) {
-                throw new RuntimeException("Must provide enough commands for the reader");
-            }
-        }
-    }
 }

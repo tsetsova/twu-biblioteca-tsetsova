@@ -1,20 +1,13 @@
 package com.twu.biblioteca;
 
-public class BibliotecaApp{
+class Biblioteca {
 
     private final Console console;
     private Input input;
 
-    BibliotecaApp(Console console, Input input) {
+    Biblioteca(Console console, Input input) {
         this.console = console;
         this.input = input;
-    }
-
-    public static void main(String[] args) {
-        BibliotecaApp biblioteca = new BibliotecaApp(new RealConsole(), new UserInput());
-        biblioteca.greet();
-        biblioteca.menu();
-        biblioteca.chooseOption();
     }
 
     void greet() {
