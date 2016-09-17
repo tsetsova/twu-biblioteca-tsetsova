@@ -16,11 +16,15 @@ public class App {
     }
 
     void run() {
-
-        String command = input.read();
         Biblioteca biblioteca = new Biblioteca(console);
         biblioteca.greet();
         biblioteca.menu();
-        biblioteca.chooseOption(command);
+
+        while(true) {
+            String command = input.read();
+            biblioteca.chooseOption(command);
+            if (command.equals("2")) {break;}
+        }
+
     }
 }
