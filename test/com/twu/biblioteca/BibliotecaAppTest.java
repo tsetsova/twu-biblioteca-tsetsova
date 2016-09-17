@@ -14,7 +14,15 @@ public class BibliotecaAppTest {
     @Test
     public void DisplaysAGreetingMessage() {
         biblioteca.greet();
-        assertEquals("Welcome to Biblioteca", console.printed);
+        assertEquals("Welcome to Biblioteca", console.printed());
+    }
+
+    @Test
+    public void DisplaysAListOfBooks() {
+        biblioteca.list();
+        assertEquals("The Well-Grounded Rubyist | David A. Black | 2009\n" +
+                     "Clean Code | Robert Cecil Martin | 2008\n" +
+                     "The Software Crafstman | Sandro Mancuso | 2014", console.printed());
     }
 
 
