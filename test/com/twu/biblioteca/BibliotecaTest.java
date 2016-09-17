@@ -9,8 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class BibliotecaTest {
 
     private TestConsole console = new TestConsole();
-    private TestInput input = new TestInput();
-    private Biblioteca biblioteca = new Biblioteca(console, input);
+    private Biblioteca biblioteca = new Biblioteca(console);
 
     @Test
     public void DisplaysAGreetingMessage() {
@@ -29,8 +28,7 @@ public class BibliotecaTest {
 
     @Test
     public void CanChooseAnOptionFromAMenu() {
-        input.addCommand("1");
-        biblioteca.chooseOption();
+        biblioteca.chooseOption("1");
 
         assertEquals("The Well-Grounded Rubyist | David A. Black | 2009\n" +
                 "Clean Code | Robert Cecil Martin | 2008\n" +
@@ -39,8 +37,7 @@ public class BibliotecaTest {
 
     @Test
     public void ReturnsAnErrorMessageIfMenuOptionIsInvalid() {
-        input.addCommand("Invalid");
-        biblioteca.chooseOption();
+        biblioteca.chooseOption("Invalid");
 
         assertEquals("Please choose a valid menu option!\n" +
                      "Menu:\n" +
@@ -51,8 +48,7 @@ public class BibliotecaTest {
 
     @Test
     public void DisplaysAnExitMessageWhenUserQuits() {
-        input.addCommand("2");
-        biblioteca.chooseOption();
+        biblioteca.chooseOption("2");
 
         assertEquals("Goodbye! Enjoy your books.\n", console.printed());
     }

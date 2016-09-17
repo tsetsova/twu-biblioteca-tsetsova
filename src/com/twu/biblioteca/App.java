@@ -16,9 +16,11 @@ public class App {
     }
 
     void run() {
-        Biblioteca biblioteca = new Biblioteca(console, input);
+
+        String command = input.read();
+        Biblioteca biblioteca = new Biblioteca(console);
         biblioteca.greet();
         biblioteca.menu();
-        biblioteca.chooseOption();
+        biblioteca.chooseOption(command);
     }
 }

@@ -3,11 +3,9 @@ package com.twu.biblioteca;
 class Biblioteca {
 
     private final Console console;
-    private Input input;
 
-    Biblioteca(Console console, Input input) {
+    Biblioteca(Console console) {
         this.console = console;
-        this.input = input;
     }
 
     void greet() {
@@ -21,8 +19,7 @@ class Biblioteca {
                               "Write the number of the option you want displayed.");
     }
 
-    void chooseOption() {
-        String command = input.read();
+    void chooseOption(String command) {
         if (command.equals("1")) {
             list();
         } else if (command.equals("2")) {
