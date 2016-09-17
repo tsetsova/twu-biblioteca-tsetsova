@@ -3,6 +3,8 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 
+import java.util.LinkedList;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -29,7 +31,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void CanChooseAnOptionFromAMenu() {
-        input.setMessage("1");
+        input.addCommand("1");
         biblioteca.chooseOption();
 
         assertEquals("The Well-Grounded Rubyist | David A. Black | 2009\n" +
@@ -39,7 +41,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void ReturnsAnErrorMessageIfMenuOptionIsInvalid() {
-        input.setMessage("Invalid");
+        input.addCommand("Invalid");
         biblioteca.chooseOption();
 
         assertEquals("Please choose a valid menu option!\n" +
@@ -51,7 +53,7 @@ public class BibliotecaAppTest {
 
     @Test
     public void DisplaysAnExitMessageWhenUserQuits() {
-        input.setMessage("2");
+        input.addCommand("2");
         biblioteca.chooseOption();
 
         assertEquals("Goodbye! Enjoy your books.\n", console.printed());
@@ -70,14 +72,18 @@ public class BibliotecaAppTest {
     }
 
     private class TestInput implements Input {
-        private String message;
+        private LinkedList<String> commands = new LinkedList<String>();
 
-        void setMessage(String message) {
-            this.message = message;
+        void addCommand(String command) {
+            this.commands.add(command);
         }
 
         public String read() {
-            return message;
+            try {
+                return this.commands.remove();
+            } catch(RuntimeException exception) {
+                throw new RuntimeException("Must provide enough commands for the reader");
+            }
         }
     }
 }
