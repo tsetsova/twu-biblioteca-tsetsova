@@ -23,6 +23,7 @@ public class BibliotecaAppTest {
         biblioteca.menu();
         assertEquals("Menu:\n " +
                      "1: List books\n" +
+                     "2: Quit\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
     }
 
@@ -44,7 +45,16 @@ public class BibliotecaAppTest {
         assertEquals("Please choose a valid menu option!\n" +
                      "Menu:\n " +
                      "1: List books\n" +
+                     "2: Quit\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
+    }
+
+    @Test
+    public void DisplaysAnExitMessageWhenUserQuits() {
+        input.setMessage("2");
+        biblioteca.chooseOption();
+
+        assertEquals("Goodbye! Enjoy your books.\n", console.printed());
     }
 
     private class TestConsole implements Console {

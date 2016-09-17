@@ -24,11 +24,15 @@ public class BibliotecaApp{
     void menu() {
         console.printToScreen("Menu:\n " +
                 "1: List books\n" +
+                "2: Quit\n" +
                 "Write the number of the option you want displayed.");
     }
 
     void chooseOption() {
-        if (input.read().equals("1")) { list();
+        if (input.read().equals("1")) {
+            list();
+        } else if (input.read().equals("2")) {
+            console.printToScreen("Goodbye! Enjoy your books.");
         } else {
             console.printToScreen("Please choose a valid menu option!");
             menu();
