@@ -28,7 +28,11 @@ public class BibliotecaApp{
     }
 
     void chooseOption() {
-        if (input.read().equals("1")) { list(); }
+        if (input.read().equals("1")) { list();
+        } else {
+            console.printToScreen("Please choose a valid menu option!");
+            menu();
+        }
     }
 
     private void list() {

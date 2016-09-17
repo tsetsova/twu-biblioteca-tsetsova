@@ -15,7 +15,7 @@ public class BibliotecaAppTest {
     @Test
     public void DisplaysAGreetingMessage() {
         biblioteca.greet();
-        assertEquals("Welcome to Biblioteca", console.printed());
+        assertEquals("Welcome to Biblioteca\n", console.printed());
     }
 
     @Test
@@ -23,7 +23,7 @@ public class BibliotecaAppTest {
         biblioteca.menu();
         assertEquals("Menu:\n " +
                      "1: List books\n" +
-                     "Write the number of the option you want displayed.", console.printed());
+                     "Write the number of the option you want displayed.\n", console.printed());
     }
 
     @Test
@@ -33,15 +33,25 @@ public class BibliotecaAppTest {
 
         assertEquals("The Well-Grounded Rubyist | David A. Black | 2009\n" +
                 "Clean Code | Robert Cecil Martin | 2008\n" +
-                "The Software Crafstman | Sandro Mancuso | 2014", console.printed());
+                "The Software Crafstman | Sandro Mancuso | 2014\n", console.printed());
     }
 
+    @Test
+    public void ReturnsAnErrorMessageIfMenuOptionIsInvalid() {
+        input.setMessage("Invalid");
+        biblioteca.chooseOption();
+
+        assertEquals("Please choose a valid menu option!\n" +
+                     "Menu:\n " +
+                     "1: List books\n" +
+                     "Write the number of the option you want displayed.\n", console.printed());
+    }
 
     private class TestConsole implements Console {
         private String printed = "";
 
         public void printToScreen(String message) {
-            printed += message;
+            printed += message + "\n";
         }
 
         String printed() {
