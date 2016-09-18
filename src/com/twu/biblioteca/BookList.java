@@ -5,6 +5,7 @@ import java.util.Arrays;
 class BookList {
 
     private ArrayList<Book> availableBooks = new ArrayList<Book>();
+    private ArrayList<Book> checkedOutBooks = new ArrayList<Book>();
 
     BookList() {
         availableBooks = new ArrayList<Book>(Arrays.asList(
@@ -17,27 +18,44 @@ class BookList {
         this.availableBooks = listOfBooks;
     }
 
-    boolean isBookAvailable(String bookName) {
-        for(Book book : availableBooks) {
-            if(book.titleMatches(bookName)) return true;
-        }
-        return false;
-    }
-
-    void checkout(String bookName) {
-        Book checkedOutBook = findBook(bookName);
-
-        availableBooks.remove(checkedOutBook);
-    }
 
     ArrayList<Book> allBooks() {
         return availableBooks;
     }
 
-    private Book findBook(String bookName) {
-        for(Book book : availableBooks) {
+    boolean isBookAvailable(String bookName) {
+        return isInList(bookName, availableBooks);
+    }
+
+    boolean isBookCheckedOut(String bookName) {
+        return isInList(bookName, checkedOutBooks);
+    }
+
+    void checkout(String bookName) {
+        Book checkedOutBook = findBook(bookName, availableBooks);
+        checkedOutBooks.add(checkedOutBook);
+        availableBooks.remove(checkedOutBook);
+    }
+
+    void returnBook(String bookName) {
+        if (isBookCheckedOut(bookName)) {
+            Book returnedBook = findBook(bookName, checkedOutBooks);
+            checkedOutBooks.remove(returnedBook);
+            availableBooks.add(returnedBook);
+        }
+    }
+
+    private Book findBook(String bookName, ArrayList<Book> books) {
+        for(Book book : books) {
             if (book.titleMatches(bookName)) { return book; }
         }
         return null;
+    }
+
+    private boolean isInList(String bookName, ArrayList<Book> books) {
+        for(Book book : books) {
+            if(book.titleMatches(bookName)) return true;
+        }
+        return false;
     }
 }

@@ -30,15 +30,28 @@ class Biblioteca {
         } else if (command.equals(Commands.quit.name)) {
             console.printToScreen("Goodbye!");
         } else if (command.equals(Commands.checkout.name)) {
-            console.printToScreen("Welcome to checkout. Which book title would you like to checkout?");
-            checksAvailability();
+            checkOutBook();
+        } else if (command.equals(Commands.returnBook.name)) {
+            returnBook();
         } else {
             console.printToScreen("Please choose a valid menu option!");
             menu();
         }
     }
 
-    private void checksAvailability() {
+    private void returnBook() {
+        console.printToScreen("Welcome to returns. Which book would you like to return?");
+        String bookName = input.read();
+        if (bookList.isBookCheckedOut(bookName)) {
+            bookList.returnBook(bookName);
+            console.printToScreen("Thank you for returning the book");
+        } else {
+            console.printToScreen("That is not a valid book to return.");
+        }
+    }
+
+    private void checkOutBook() {
+        console.printToScreen("Welcome to checkout. Which book title would you like to checkout?");
         String bookName = input.read();
         if (bookList.isBookAvailable(bookName)) {
             bookList.checkout(bookName);

@@ -31,7 +31,7 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void CanChooseAnOptionFromAMenu() {
+    public void ListsBooks() {
         biblioteca.chooseOption(Commands.list.name);
 
         assertEquals("The Well-Grounded Rubyist | David A. Black | 2009\n" +
@@ -53,18 +53,11 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void DisplaysAnExitMessageWhenUserQuits() {
-        biblioteca.chooseOption(Commands.quit.name);
-
-        assertEquals("Goodbye!\n", console.printed());
-    }
-
-    @Test
     public void DisplaysSuccesfullCheckoutMessage() {
         input.addCommand("The Well-Grounded Rubyist");
         biblioteca.chooseOption(Commands.checkout.name);
         assertEquals("Welcome to checkout. Which book title would you like to checkout?\n" +
-                     "Thank you! Enjoy the book!\n", console.printed() );
+                "Thank you! Enjoy the book!\n", console.printed() );
     }
 
 
@@ -75,4 +68,32 @@ public class BibliotecaTest {
         assertEquals("Welcome to checkout. Which book title would you like to checkout?\n" +
                 "That book is not available.\n", console.printed() );
     }
+
+    @Test
+    public void DisplaysSuccessfullReturnMessage(){
+        input.addCommand("The Well-Grounded Rubyist");
+        input.addCommand("The Well-Grounded Rubyist");
+        biblioteca.chooseOption(Commands.checkout.name);
+        biblioteca.chooseOption(Commands.returnBook.name);
+        assertEquals("Welcome to checkout. Which book title would you like to checkout?\n" +
+                "Thank you! Enjoy the book!\n" +
+                "Welcome to returns. Which book would you like to return?\n" +
+                "Thank you for returning the book\n", console.printed());
+    }
+
+    @Test
+    public void DisplaysUnsuccessfullReturnMessage(){
+        input.addCommand("The Well-Grounded Rubyist");
+        biblioteca.chooseOption(Commands.returnBook.name);
+        assertEquals("Welcome to returns. Which book would you like to return?\n" +
+                "That is not a valid book to return.\n", console.printed());
+    }
+
+    @Test
+    public void DisplaysAnExitMessageWhenUserQuits() {
+        biblioteca.chooseOption(Commands.quit.name);
+
+        assertEquals("Goodbye!\n", console.printed());
+    }
+
 }

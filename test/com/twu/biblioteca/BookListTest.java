@@ -31,4 +31,19 @@ public class BookListTest {
     public void ListsAllBook() {
         assertEquals(listOfBooks, bookList.allBooks());
     }
+
+    @Test
+    public void ReturnsABook() {
+        bookList.checkout("Clean Code");
+        bookList.returnBook("Clean Code");
+        assertTrue(bookList.isBookAvailable("Clean Code"));
+        assertEquals(2, bookList.allBooks().size());
+    }
+
+    @Test
+    public void OnlyReturnsCheckedOutBooks() {
+        bookList.returnBook("Coding with Bob");
+        assertFalse(bookList.isBookAvailable("Coding with Bob"));
+        assertEquals(2, bookList.allBooks().size());
+    }
 }
