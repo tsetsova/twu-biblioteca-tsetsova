@@ -24,6 +24,7 @@ public class AppTest {
                      "Menu:\n" +
                      Commands.list.toString() + "\n" +
                      Commands.checkout.toString() + "\n" +
+                     Commands.returnBook.toString() + "\n" +
                      Commands.quit.toString() + "\n" +
                      "Write the number of the option you want displayed.\n" +
                      "The Well-Grounded Rubyist | David A. Black | 2009\n" +

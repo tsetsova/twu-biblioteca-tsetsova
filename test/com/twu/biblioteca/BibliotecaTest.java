@@ -25,6 +25,7 @@ public class BibliotecaTest {
         assertEquals("Menu:\n" +
                      Commands.list.toString() + "\n" +
                      Commands.checkout.toString() + "\n" +
+                     Commands.returnBook.toString() + "\n" +
                      Commands.quit.toString() + "\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
     }
@@ -46,6 +47,7 @@ public class BibliotecaTest {
                      "Menu:\n" +
                      Commands.list.toString() + "\n" +
                      Commands.checkout.toString() + "\n" +
+                     Commands.returnBook.toString() + "\n" +
                      Commands.quit.toString() + "\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
     }
