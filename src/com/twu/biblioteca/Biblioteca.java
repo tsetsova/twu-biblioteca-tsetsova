@@ -1,10 +1,29 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
+
 class Biblioteca {
+    private class MenuOption {
+        private final String description;
+        private final String name;
+
+        MenuOption(String name, String description) {
+            this.name = name;
+            this.description = description;
+        }
+
+        @Override
+        public String toString() {
+            return name + ": " + description;
+        }
+    }
 
     private final Console console;
+    private final ArrayList<MenuOption> menuOptions =  new ArrayList<MenuOption>();
 
     Biblioteca(Console console) {
+        menuOptions.add(new MenuOption("1", "List books"));
+        menuOptions.add(new MenuOption("2", "Quit"));
         this.console = console;
     }
 
@@ -13,10 +32,11 @@ class Biblioteca {
     }
 
     void menu() {
-        console.printToScreen("Menu:\n" +
-                              "1: List books\n" +
-                              "2: Quit\n" +
-                              "Write the number of the option you want displayed.");
+        console.printToScreen("Menu:");
+        for(MenuOption menuOption : menuOptions) {
+            console.printToScreen(menuOption.toString());
+        }
+        console.printToScreen("Write the number of the option you want displayed.");
     }
 
     void chooseOption(String command) {
