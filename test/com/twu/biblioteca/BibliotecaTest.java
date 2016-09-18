@@ -9,7 +9,9 @@ import static org.junit.Assert.assertEquals;
 public class BibliotecaTest {
 
     private TestConsole console = new TestConsole();
-    private Biblioteca biblioteca = new Biblioteca(console);
+    private BookList bookList = new BookList();
+    private TestInput input;
+    private Biblioteca biblioteca = new Biblioteca(console, input, bookList);
 
     @Test
     public void DisplaysAGreetingMessage() {
@@ -22,6 +24,7 @@ public class BibliotecaTest {
         biblioteca.menu();
         assertEquals("Menu:\n" +
                      Commands.list.toString() + "\n" +
+                     Commands.checkout.toString() + "\n" +
                      Commands.quit.toString() + "\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
     }
@@ -42,6 +45,7 @@ public class BibliotecaTest {
         assertEquals("Please choose a valid menu option!\n" +
                      "Menu:\n" +
                      Commands.list.toString() + "\n" +
+                     Commands.checkout.toString() + "\n" +
                      Commands.quit.toString() + "\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
     }
@@ -50,7 +54,7 @@ public class BibliotecaTest {
     public void DisplaysAnExitMessageWhenUserQuits() {
         biblioteca.chooseOption(Commands.quit.name);
 
-        assertEquals("Goodbye! Enjoy your books.\n", console.printed());
+        assertEquals("Goodbye!\n", console.printed());
     }
 
 }

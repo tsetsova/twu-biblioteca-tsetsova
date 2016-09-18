@@ -3,9 +3,13 @@ package com.twu.biblioteca;
 class Biblioteca {
 
     private final Console console;
+    private final Input input;
+    private final BookList bookList;
 
-    Biblioteca(Console console) {
+    Biblioteca(Console console, Input input, BookList bookList) {
         this.console = console;
+        this.input = input;
+        this.bookList = bookList;
     }
 
     void greet() {
@@ -24,7 +28,14 @@ class Biblioteca {
         if (command.equals(Commands.list.name)) {
             list();
         } else if (command.equals(Commands.quit.name)) {
-            console.printToScreen("Goodbye! Enjoy your books.");
+            console.printToScreen("Goodbye!");
+        } else if (command.equals(Commands.checkout.name)) {
+            console.printToScreen("Welcome to checkout. Which book title would you like to checkout?");
+            String bookName = input.read();
+            if (bookList.isBookAvailable(bookName)) {
+                bookList.checkout(bookName);
+               console.printToScreen("Thank you! Enjoy the book!");
+            }
         } else {
             console.printToScreen("Please choose a valid menu option!");
             menu();
@@ -32,8 +43,9 @@ class Biblioteca {
     }
 
     private void list() {
-        console.printToScreen("The Well-Grounded Rubyist | David A. Black | 2009\n" +
-                "Clean Code | Robert Cecil Martin | 2008\n" +
-                "The Software Crafstman | Sandro Mancuso | 2014");
+
+        for (Book book : bookList.allBooks()) {
+            console.printToScreen(book.toString());
+        }
     }
 }
