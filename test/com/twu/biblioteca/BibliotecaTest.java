@@ -10,7 +10,7 @@ public class BibliotecaTest {
 
     private TestConsole console = new TestConsole();
     private BookList bookList = new BookList();
-    private TestInput input;
+    private TestInput input = new TestInput();
     private Biblioteca biblioteca = new Biblioteca(console, input, bookList);
 
     @Test
@@ -57,4 +57,20 @@ public class BibliotecaTest {
         assertEquals("Goodbye!\n", console.printed());
     }
 
+    @Test
+    public void DisplaysSuccesfullCheckoutMessage() {
+        input.addCommand("The Well-Grounded Rubyist");
+        biblioteca.chooseOption(Commands.checkout.name);
+        assertEquals("Welcome to checkout. Which book title would you like to checkout?\n" +
+                     "Thank you! Enjoy the book!\n", console.printed() );
+    }
+
+
+    @Test
+    public void DisplaysUnsuccesfullCheckoutMessage() {
+        input.addCommand("Coding with Bob");
+        biblioteca.chooseOption(Commands.checkout.name);
+        assertEquals("Welcome to checkout. Which book title would you like to checkout?\n" +
+                "That book is not available.\n", console.printed() );
+    }
 }
