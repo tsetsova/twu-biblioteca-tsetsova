@@ -13,13 +13,13 @@ public class AppTest {
 
     @Test
     public void userCanQuit() {
-        input.addCommand("1");
-        input.addCommand("2");
+        input.addCommand(Commands.list.name);
+        input.addCommand(Commands.quit.name);
         app.run();
         assertEquals("Welcome to Biblioteca\n" +
                      "Menu:\n" +
-                     "1: List books\n" +
-                     "2: Quit\n" +
+                     Commands.list.toString() + "\n" +
+                     Commands.quit.toString() + "\n" +
                      "Write the number of the option you want displayed.\n" +
                      "The Well-Grounded Rubyist | David A. Black | 2009\n" +
                      "Clean Code | Robert Cecil Martin | 2008\n" +

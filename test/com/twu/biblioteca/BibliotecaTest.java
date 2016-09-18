@@ -21,14 +21,14 @@ public class BibliotecaTest {
     public void DisplaysAMenu() {
         biblioteca.menu();
         assertEquals("Menu:\n" +
-                     "1: List books\n" +
-                     "2: Quit\n" +
+                     Commands.list.toString() + "\n" +
+                     Commands.quit.toString() + "\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
     }
 
     @Test
     public void CanChooseAnOptionFromAMenu() {
-        biblioteca.chooseOption("1");
+        biblioteca.chooseOption(Commands.list.name);
 
         assertEquals("The Well-Grounded Rubyist | David A. Black | 2009\n" +
                 "Clean Code | Robert Cecil Martin | 2008\n" +
@@ -41,14 +41,14 @@ public class BibliotecaTest {
 
         assertEquals("Please choose a valid menu option!\n" +
                      "Menu:\n" +
-                     "1: List books\n" +
-                     "2: Quit\n" +
+                     Commands.list.toString() + "\n" +
+                     Commands.quit.toString() + "\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
     }
 
     @Test
     public void DisplaysAnExitMessageWhenUserQuits() {
-        biblioteca.chooseOption("2");
+        biblioteca.chooseOption(Commands.quit.name);
 
         assertEquals("Goodbye! Enjoy your books.\n", console.printed());
     }
