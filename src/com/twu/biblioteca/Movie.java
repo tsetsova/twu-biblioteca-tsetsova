@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-public class Movie {
+class Movie {
 
     private String title;
     private String rating;
@@ -16,5 +16,9 @@ public class Movie {
 
     public String toString() {
         return title + " | " + rating + " | "+ director + " | " + releaseYear;
+    }
+
+    boolean titleMatches(String otherTitle) {
+        return title.equals(otherTitle);
     }
 }

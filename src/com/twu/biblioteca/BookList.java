@@ -19,9 +19,7 @@ class BookList {
     }
 
 
-    ArrayList<Book> allBooks() {
-        return availableBooks;
-    }
+    ArrayList<Book> allBooks() { return availableBooks; }
 
     boolean isBookAvailable(String bookName) {
         return isInList(bookName, availableBooks);
@@ -32,17 +30,19 @@ class BookList {
     }
 
     void checkout(String bookName) {
+        if (!isBookAvailable(bookName)) return;
+
         Book checkedOutBook = findBook(bookName, availableBooks);
         checkedOutBooks.add(checkedOutBook);
         availableBooks.remove(checkedOutBook);
     }
 
     void returnBook(String bookName) {
-        if (isBookCheckedOut(bookName)) {
-            Book returnedBook = findBook(bookName, checkedOutBooks);
-            checkedOutBooks.remove(returnedBook);
-            availableBooks.add(returnedBook);
-        }
+        if (!isBookCheckedOut(bookName)) return;
+
+        Book returnedBook = findBook(bookName, checkedOutBooks);
+        checkedOutBooks.remove(returnedBook);
+        availableBooks.add(returnedBook);
     }
 
     private Book findBook(String bookName, ArrayList<Book> books) {

@@ -28,13 +28,15 @@ class Biblioteca {
 
     void chooseOption(String command) {
         if (command.equals(Commands.listBooks.name)) {
-            list();
+            listBooks();
         } else if (command.equals(Commands.listMovies.name)) {
             listMovies();
         } else if (command.equals(Commands.quit.name)) {
             console.printToScreen("Goodbye!");
-        } else if (command.equals(Commands.checkout.name)) {
+        } else if (command.equals(Commands.checkoutBook.name)) {
             checkOutBook();
+        } else if (command.equals(Commands.checkoutMovie.name)) {
+            checkOutMovie();
         } else if (command.equals(Commands.returnBook.name)) {
             returnBook();
         } else {
@@ -43,20 +45,16 @@ class Biblioteca {
         }
     }
 
-    private void listMovies() {
-        for (Movie movie : movieList.allMovies()) {
-            console.printToScreen(movie.toString());
+    private void listBooks() {
+
+        for (Book book : bookList.allBooks()) {
+            console.printToScreen(book.toString());
         }
     }
 
-    private void returnBook() {
-        console.printToScreen("Welcome to returns. Which book would you like to return?");
-        String bookName = input.read();
-        if (bookList.isBookCheckedOut(bookName)) {
-            bookList.returnBook(bookName);
-            console.printToScreen("Thank you for returning the book");
-        } else {
-            console.printToScreen("That is not a valid book to return.");
+    private void listMovies() {
+        for (Movie movie : movieList.allMovies()) {
+            console.printToScreen(movie.toString());
         }
     }
 
@@ -70,10 +68,27 @@ class Biblioteca {
             console.printToScreen("That book is not available.");
     }
 
-    private void list() {
+    private void checkOutMovie() {
+        console.printToScreen("Welcome to checkout. Which movie title would you like to checkout?");
+        String movieName = input.read();
+        if (movieList.isMovieAvailable(movieName)) {
+            movieList.checkout(movieName);
+            console.printToScreen("Thank you! Enjoy the movie!");
+        } else
+            console.printToScreen("That movie is not available.");
+    }
 
-        for (Book book : bookList.allBooks()) {
-            console.printToScreen(book.toString());
+
+    private void returnBook() {
+        console.printToScreen("Welcome to returns. Which book would you like to return?");
+        String bookName = input.read();
+        if (bookList.isBookCheckedOut(bookName)) {
+            bookList.returnBook(bookName);
+            console.printToScreen("Thank you for returning the book");
+        } else {
+            console.printToScreen("That is not a valid book to return.");
         }
     }
+
+
 }

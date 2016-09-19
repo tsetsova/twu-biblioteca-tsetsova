@@ -16,7 +16,7 @@ public class AppTest {
     @Test
     public void userCanCheckoutABook() {
         input.addCommand(Commands.listBooks.name);
-        input.addCommand(Commands.checkout.name);
+        input.addCommand(Commands.checkoutBook.name);
         input.addCommand("Clean Code");
         input.addCommand(Commands.listBooks.name);
         input.addCommand(Commands.quit.name);
@@ -25,7 +25,8 @@ public class AppTest {
                      "Menu:\n" +
                      Commands.listBooks.toString() + "\n" +
                      Commands.listMovies.toString() + "\n" +
-                     Commands.checkout.toString() + "\n" +
+                     Commands.checkoutBook.toString() + "\n" +
+                     Commands.checkoutMovie.toString() + "\n" +
                      Commands.returnBook.toString() + "\n" +
                      Commands.quit.toString() + "\n" +
                      "Write the number of the option you want displayed.\n" +
@@ -42,7 +43,7 @@ public class AppTest {
     @Test
     public void userCanReturntABook() {
         input.addCommand(Commands.listBooks.name);
-        input.addCommand(Commands.checkout.name);
+        input.addCommand(Commands.checkoutBook.name);
         input.addCommand("Clean Code");
         input.addCommand(Commands.returnBook.name);
         input.addCommand("Clean Code");
@@ -53,7 +54,8 @@ public class AppTest {
                 "Menu:\n" +
                 Commands.listBooks.toString() + "\n" +
                 Commands.listMovies.toString() + "\n" +
-                Commands.checkout.toString() + "\n" +
+                Commands.checkoutBook.toString() + "\n" +
+                Commands.checkoutMovie.toString() + "\n" +
                 Commands.returnBook.toString() + "\n" +
                 Commands.quit.toString() + "\n" +
                 "Write the number of the option you want displayed.\n" +
@@ -67,6 +69,33 @@ public class AppTest {
                 "The Well-Grounded Rubyist | David A. Black | 2009\n" +
                 "The Software Crafstman | Sandro Mancuso | 2014\n" +
                 "Clean Code | Robert Cecil Martin | 2008\n" +
+                "Goodbye!\n", console.printed());
+    }
+
+    @Test
+    public void userCanCheckoutAMovie() {
+        input.addCommand(Commands.listMovies.name);
+        input.addCommand(Commands.checkoutMovie.name);
+        input.addCommand("Mr. Robot");
+        input.addCommand(Commands.listMovies.name);
+        input.addCommand(Commands.quit.name);
+        app.run();
+        assertEquals("Welcome to Biblioteca\n" +
+                "Menu:\n" +
+                Commands.listBooks.toString() + "\n" +
+                Commands.listMovies.toString() + "\n" +
+                Commands.checkoutBook.toString() + "\n" +
+                Commands.checkoutMovie.toString() + "\n" +
+                Commands.returnBook.toString() + "\n" +
+                Commands.quit.toString() + "\n" +
+                "Write the number of the option you want displayed.\n" +
+                "Mr. Robot | 8.7 | Sam Esmail | 2015\n" +
+                "The Man in the High Castle | 8.1 | Frank Spotnitz | 2016\n" +
+                "Silicon Valley | 8.5 | Jim Kleverweis | 2014\n" +
+                "Welcome to checkout. Which movie title would you like to checkout?\n" +
+                "Thank you! Enjoy the movie!\n" +
+                "The Man in the High Castle | 8.1 | Frank Spotnitz | 2016\n" +
+                "Silicon Valley | 8.5 | Jim Kleverweis | 2014\n" +
                 "Goodbye!\n", console.printed());
     }
 }
