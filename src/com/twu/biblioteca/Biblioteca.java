@@ -5,11 +5,13 @@ class Biblioteca {
     private final Console console;
     private final Input input;
     private final BookList bookList;
+    private final MovieList movieList;
 
-    Biblioteca(Console console, Input input, BookList bookList) {
+    Biblioteca(Console console, Input input, BookList bookList, MovieList movieList) {
         this.console = console;
         this.input = input;
         this.bookList = bookList;
+        this.movieList = movieList;
     }
 
     void greet() {
@@ -25,8 +27,10 @@ class Biblioteca {
     }
 
     void chooseOption(String command) {
-        if (command.equals(Commands.list.name)) {
+        if (command.equals(Commands.listBooks.name)) {
             list();
+        } else if (command.equals(Commands.listMovies.name)) {
+            listMovies();
         } else if (command.equals(Commands.quit.name)) {
             console.printToScreen("Goodbye!");
         } else if (command.equals(Commands.checkout.name)) {
@@ -36,6 +40,12 @@ class Biblioteca {
         } else {
             console.printToScreen("Please choose a valid menu option!");
             menu();
+        }
+    }
+
+    private void listMovies() {
+        for (Movie movie : movieList.allMovies()) {
+            console.printToScreen(movie.toString());
         }
     }
 

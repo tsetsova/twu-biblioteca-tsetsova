@@ -11,7 +11,8 @@ public class BibliotecaTest {
     private TestConsole console = new TestConsole();
     private BookList bookList = new BookList();
     private TestInput input = new TestInput();
-    private Biblioteca biblioteca = new Biblioteca(console, input, bookList);
+    private MovieList movieList = new MovieList();
+    private Biblioteca biblioteca = new Biblioteca(console, input, bookList, movieList);
 
     @Test
     public void DisplaysAGreetingMessage() {
@@ -23,7 +24,8 @@ public class BibliotecaTest {
     public void DisplaysAMenu() {
         biblioteca.menu();
         assertEquals("Menu:\n" +
-                     Commands.list.toString() + "\n" +
+                     Commands.listBooks.toString() + "\n" +
+                     Commands.listMovies.toString() + "\n" +
                      Commands.checkout.toString() + "\n" +
                      Commands.returnBook.toString() + "\n" +
                      Commands.quit.toString() + "\n" +
@@ -32,11 +34,20 @@ public class BibliotecaTest {
 
     @Test
     public void ListsBooks() {
-        biblioteca.chooseOption(Commands.list.name);
+        biblioteca.chooseOption(Commands.listBooks.name);
 
         assertEquals("The Well-Grounded Rubyist | David A. Black | 2009\n" +
                 "Clean Code | Robert Cecil Martin | 2008\n" +
                 "The Software Crafstman | Sandro Mancuso | 2014\n", console.printed());
+    }
+
+    @Test
+    public void ListsMovies() {
+        biblioteca.chooseOption(Commands.listMovies.name);
+
+        assertEquals("Mr. Robot | 8.7 | Sam Esmail | 2015\n" +
+                     "The Man in the High Castle | 8.1 | Frank Spotnitz | 2016\n" +
+                     "Silicon Valley | 8.5 | Jim Kleverweis | 2014\n", console.printed());
     }
 
     @Test
@@ -45,7 +56,8 @@ public class BibliotecaTest {
 
         assertEquals("Please choose a valid menu option!\n" +
                      "Menu:\n" +
-                     Commands.list.toString() + "\n" +
+                     Commands.listBooks.toString() + "\n" +
+                     Commands.listMovies.toString() + "\n" +
                      Commands.checkout.toString() + "\n" +
                      Commands.returnBook.toString() + "\n" +
                      Commands.quit.toString() + "\n" +

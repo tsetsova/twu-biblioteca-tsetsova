@@ -9,20 +9,22 @@ public class AppTest {
     private TestConsole console = new TestConsole();
     private TestInput input = new TestInput();
     private BookList bookList = new BookList();
+    private MovieList movieList = new MovieList();
 
-    private final App app = new App(console, input, bookList);
+    private final App app = new App(console, input, bookList, movieList);
 
     @Test
     public void userCanCheckoutABook() {
-        input.addCommand(Commands.list.name);
+        input.addCommand(Commands.listBooks.name);
         input.addCommand(Commands.checkout.name);
         input.addCommand("Clean Code");
-        input.addCommand(Commands.list.name);
+        input.addCommand(Commands.listBooks.name);
         input.addCommand(Commands.quit.name);
         app.run();
         assertEquals("Welcome to Biblioteca\n" +
                      "Menu:\n" +
-                     Commands.list.toString() + "\n" +
+                     Commands.listBooks.toString() + "\n" +
+                     Commands.listMovies.toString() + "\n" +
                      Commands.checkout.toString() + "\n" +
                      Commands.returnBook.toString() + "\n" +
                      Commands.quit.toString() + "\n" +
@@ -39,17 +41,18 @@ public class AppTest {
 
     @Test
     public void userCanReturntABook() {
-        input.addCommand(Commands.list.name);
+        input.addCommand(Commands.listBooks.name);
         input.addCommand(Commands.checkout.name);
         input.addCommand("Clean Code");
         input.addCommand(Commands.returnBook.name);
         input.addCommand("Clean Code");
-        input.addCommand(Commands.list.name);
+        input.addCommand(Commands.listBooks.name);
         input.addCommand(Commands.quit.name);
         app.run();
         assertEquals("Welcome to Biblioteca\n" +
                 "Menu:\n" +
-                Commands.list.toString() + "\n" +
+                Commands.listBooks.toString() + "\n" +
+                Commands.listMovies.toString() + "\n" +
                 Commands.checkout.toString() + "\n" +
                 Commands.returnBook.toString() + "\n" +
                 Commands.quit.toString() + "\n" +
