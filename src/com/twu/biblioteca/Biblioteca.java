@@ -6,10 +6,9 @@ class Biblioteca {
     private final Input input;
     private final BookList bookList;
     private final MovieList movieList;
-    private Account account;
+    private User account;
 
-    Biblioteca(Console console, Input input, BookList bookList, MovieList movieList, Account account) {
-        this.account = account;
+    Biblioteca(Console console, Input input, BookList bookList, MovieList movieList) {
         this.console = console;
         this.input = input;
         this.bookList = bookList;
@@ -22,7 +21,8 @@ class Biblioteca {
 
     void menu() {
         console.printToScreen("Menu:");
-        if (account instanceof User) {
+
+        if (isLoggedIn()) {
             for(MenuOption menuOption : Commands.LoggedInCommands) {
                 console.printToScreen(menuOption.toString());
             }
@@ -31,6 +31,7 @@ class Biblioteca {
                 console.printToScreen(menuOption.toString());
             }
         }
+
         console.printToScreen("Write the number of the option you want displayed.");
     }
 
@@ -63,6 +64,10 @@ class Biblioteca {
         console.printToScreen("Lovely, now you can checkout books and movies.");
         account = new User(libraryNumber, password);
         menu();
+    }
+
+    private boolean isLoggedIn() {
+        return account != null;
     }
 
     private void listBooks() {

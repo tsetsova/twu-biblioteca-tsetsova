@@ -12,8 +12,7 @@ public class BibliotecaTest {
     private BookList bookList = new BookList();
     private TestInput input = new TestInput();
     private MovieList movieList = new MovieList();
-    private Guest guest = new Guest();
-    private Biblioteca biblioteca = new Biblioteca(console, input, bookList, movieList, guest);
+    private Biblioteca biblioteca = new Biblioteca(console, input, bookList, movieList);
 
     @Test
     public void DisplaysAGreetingMessage() {

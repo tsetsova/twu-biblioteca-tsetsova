@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-class User implements Account{
+class User {
     private final String libraryNumber;
     private final String password;
 

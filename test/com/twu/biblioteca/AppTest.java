@@ -10,9 +10,8 @@ public class AppTest {
     private TestInput input = new TestInput();
     private BookList bookList = new BookList();
     private MovieList movieList = new MovieList();
-    private Guest guest = new Guest();
 
-    private final App app = new App(console, input, bookList, movieList, guest);
+    private final App app = new App(console, input, bookList, movieList);
 
 
 
