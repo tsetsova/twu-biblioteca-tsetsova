@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
+
 class Biblioteca {
 
     private final Console console;
@@ -21,17 +23,7 @@ class Biblioteca {
 
     void menu() {
         console.printToScreen("Menu:");
-
-        if (isLoggedIn()) {
-            for(MenuOption menuOption : Commands.LoggedInCommands) {
-                console.printToScreen(menuOption.toString());
-            }
-        } else {
-            for(MenuOption menuOption : Commands.SignedOutCommands) {
-                console.printToScreen(menuOption.toString());
-            }
-        }
-
+        printMenu(commands());
         console.printToScreen("Write the number of the option you want displayed.");
     }
 
@@ -56,6 +48,15 @@ class Biblioteca {
         }
     }
 
+    private ArrayList<MenuOption> commands() {
+        return isLoggedIn() ? Commands.LoggedInCommands : Commands.SignedOutCommands;
+    }
+
+    private void printMenu(ArrayList<MenuOption> commands) {
+        for(MenuOption menuOption : commands)
+            console.printToScreen(menuOption.toString());
+    }
+
     private void logIn() {
         console.printToScreen("Welcome to Login. Please fill in your library number." );
         String libraryNumber = input.read();
@@ -66,21 +67,16 @@ class Biblioteca {
         menu();
     }
 
-    private boolean isLoggedIn() {
-        return account != null;
-    }
+    private boolean isLoggedIn() { return account != null; }
 
     private void listBooks() {
-
-        for (Book book : bookList.allBooks()) {
+        for (Book book : bookList.allBooks())
             console.printToScreen(book.toString());
-        }
     }
 
     private void listMovies() {
-        for (Movie movie : movieList.allMovies()) {
+        for (Movie movie : movieList.allMovies())
             console.printToScreen(movie.toString());
-        }
     }
 
     private void checkOutBook() {

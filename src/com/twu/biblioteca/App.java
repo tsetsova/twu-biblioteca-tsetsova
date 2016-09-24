@@ -2,7 +2,6 @@ package com.twu.biblioteca;
 
 public class App {
 
-
     private Console console;
     private Input input;
     private BookList bookList;
