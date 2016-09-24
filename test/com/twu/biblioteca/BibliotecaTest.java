@@ -33,18 +33,22 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void aUserSeesAllOptions() {
-        User user = new User("123-1234", "1111");
-        Biblioteca biblioteca = new Biblioteca(console, input, bookList, movieList, user);
-        biblioteca.menu();
-        assertEquals("Menu:\n" +
-                     Commands.listBooks.toString() + "\n" +
-                     Commands.listMovies.toString() + "\n" +
-                     Commands.checkoutBook.toString() + "\n" +
-                     Commands.checkoutMovie.toString() + "\n" +
-                     Commands.returnBook.toString() + "\n" +
-                     Commands.quit.toString() + "\n" +
-                     "Write the number of the option you want displayed.\n", console.printed());
+    public void userCanLogin() {
+        input.addCommand("123-1234");
+        input.addCommand( "1111");
+        biblioteca.chooseOption(Commands.login.name);
+        assertEquals(
+                "Welcome to Login. Please fill in your library number.\n" +
+                "Thanks, and your password, please.\n" +
+                "Lovely, now you can checkout books and movies.\n" +
+                "Menu:\n" +
+                Commands.listBooks.toString() + "\n" +
+                Commands.listMovies.toString() + "\n" +
+                Commands.checkoutBook.toString() + "\n" +
+                Commands.checkoutMovie.toString() + "\n" +
+                Commands.returnBook.toString() + "\n" +
+                Commands.quit.toString() + "\n" +
+                "Write the number of the option you want displayed.\n", console.printed());
     }
 
     @Test

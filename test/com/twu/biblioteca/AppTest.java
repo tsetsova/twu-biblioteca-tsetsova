@@ -14,15 +14,7 @@ public class AppTest {
 
     private final App app = new App(console, input, bookList, movieList, guest);
 
-    @Test
-    public void userCanLogin() {
-        logInUser();
-        input.addCommand(Commands.quit.name);
-        app.run();
-        assertEquals(welcomeAndLogin + userMenu +
-                "Write the number of the option you want displayed.\n" +
-                "Goodbye!\n", console.printed());
-    }
+
 
 
     @Test
