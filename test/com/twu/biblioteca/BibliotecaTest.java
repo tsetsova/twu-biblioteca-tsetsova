@@ -12,7 +12,8 @@ public class BibliotecaTest {
     private BookList bookList = new BookList();
     private TestInput input = new TestInput();
     private MovieList movieList = new MovieList();
-    private Biblioteca biblioteca = new Biblioteca(console, input, bookList, movieList);
+    private Guest guest = new Guest();
+    private Biblioteca biblioteca = new Biblioteca(console, input, bookList, movieList, guest);
 
     @Test
     public void DisplaysAGreetingMessage() {
@@ -21,7 +22,20 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void DisplaysAMenu() {
+    public void aGuestSeesLimitedOptions() {
+        biblioteca.menu();
+        assertEquals("Menu:\n" +
+                     Commands.listBooks.toString() + "\n" +
+                     Commands.listMovies.toString() + "\n" +
+                     Commands.login.toString() + "\n" +
+                     Commands.quit.toString() + "\n" +
+                     "Write the number of the option you want displayed.\n", console.printed());
+    }
+
+    @Test
+    public void aUserSeesAllOptions() {
+        User user = new User("123-1234", "1111");
+        Biblioteca biblioteca = new Biblioteca(console, input, bookList, movieList, user);
         biblioteca.menu();
         assertEquals("Menu:\n" +
                      Commands.listBooks.toString() + "\n" +
@@ -59,9 +73,7 @@ public class BibliotecaTest {
                      "Menu:\n" +
                      Commands.listBooks.toString() + "\n" +
                      Commands.listMovies.toString() + "\n" +
-                     Commands.checkoutBook.toString() + "\n" +
-                     Commands.checkoutMovie.toString() + "\n" +
-                     Commands.returnBook.toString() + "\n" +
+                     Commands.login.toString() + "\n" +
                      Commands.quit.toString() + "\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
     }

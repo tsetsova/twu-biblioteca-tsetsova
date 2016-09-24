@@ -6,8 +6,10 @@ class Biblioteca {
     private final Input input;
     private final BookList bookList;
     private final MovieList movieList;
+    private Account account;
 
-    Biblioteca(Console console, Input input, BookList bookList, MovieList movieList) {
+    Biblioteca(Console console, Input input, BookList bookList, MovieList movieList, Account account) {
+        this.account = account;
         this.console = console;
         this.input = input;
         this.bookList = bookList;
@@ -20,8 +22,14 @@ class Biblioteca {
 
     void menu() {
         console.printToScreen("Menu:");
-        for(Commands command : Commands.values()) {
-            console.printToScreen(command.menuOption.toString());
+        if (account instanceof User) {
+            for(MenuOption menuOption : Commands.LoggedInCommands) {
+                console.printToScreen(menuOption.toString());
+            }
+        } else {
+            for(MenuOption menuOption : Commands.SignedOutCommands) {
+                console.printToScreen(menuOption.toString());
+            }
         }
         console.printToScreen("Write the number of the option you want displayed.");
     }
@@ -31,6 +39,8 @@ class Biblioteca {
             listBooks();
         } else if (command.equals(Commands.listMovies.name)) {
             listMovies();
+        } else if (command.equals(Commands.login.name)) {
+            logIn();
         } else if (command.equals(Commands.quit.name)) {
             console.printToScreen("Goodbye!");
         } else if (command.equals(Commands.checkoutBook.name)) {
@@ -43,6 +53,16 @@ class Biblioteca {
             console.printToScreen("Please choose a valid menu option!");
             menu();
         }
+    }
+
+    private void logIn() {
+        console.printToScreen("Welcome to Login. Please fill in your library number." );
+        String libraryNumber = input.read();
+        console.printToScreen("Thanks, and your password, please.");
+        String password = input.read();
+        console.printToScreen("Lovely, now you can checkout books and movies.");
+        account = new User(libraryNumber, password);
+        menu();
     }
 
     private void listBooks() {
