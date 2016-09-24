@@ -37,9 +37,9 @@ class Biblioteca {
         } else if (command.equals(Commands.quit.name)) {
             console.printToScreen("Goodbye!");
         } else if (command.equals(Commands.checkoutBook.name)) {
-            checkOutBook();
+            checkOut("book", bookList);
         } else if (command.equals(Commands.checkoutMovie.name)) {
-            checkOutMovie();
+            checkOut("movie", movieList);
         } else if (command.equals(Commands.returnBook.name)) {
             returnBook();
         } else {
@@ -79,26 +79,16 @@ class Biblioteca {
             console.printToScreen(movie.toString());
     }
 
-    private void checkOutBook() {
-        console.printToScreen("Welcome to checkout. Which book title would you like to checkout?");
-        String bookName = input.read();
-        if (bookList.isBookAvailable(bookName)) {
-            bookList.checkout(bookName);
-            console.printToScreen("Thank you! Enjoy the book!");
-        } else
-            console.printToScreen("That book is not available.");
-    }
 
-    private void checkOutMovie() {
-        console.printToScreen("Welcome to checkout. Which movie title would you like to checkout?");
-        String movieName = input.read();
-        if (movieList.isMovieAvailable(movieName)) {
-            movieList.checkout(movieName);
-            console.printToScreen("Thank you! Enjoy the movie!");
+    private void checkOut(String type, ItemList list) {
+        console.printToScreen("Welcome to checkout. Which " + type + " title would you like to checkout?");
+        String title = input.read();
+        if (list.isAvailable(title)) {
+            list.checkout(title);
+            console.printToScreen("Thank you! Enjoy the " + type + "!");
         } else
-            console.printToScreen("That movie is not available.");
+            console.printToScreen("That " + type + " is not available.");
     }
-
 
     private void returnBook() {
         console.printToScreen("Welcome to returns. Which book would you like to return?");

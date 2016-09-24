@@ -2,7 +2,7 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class BookList {
+class BookList implements ItemList {
 
     private ArrayList<Book> availableBooks = new ArrayList<Book>();
     private ArrayList<Book> checkedOutBooks = new ArrayList<Book>();
@@ -21,7 +21,7 @@ class BookList {
 
     ArrayList<Book> allBooks() { return availableBooks; }
 
-    boolean isBookAvailable(String bookName) {
+    public boolean isAvailable(String bookName) {
         return isInList(bookName, availableBooks);
     }
 
@@ -29,8 +29,8 @@ class BookList {
         return isInList(bookName, checkedOutBooks);
     }
 
-    void checkout(String bookName) {
-        if (!isBookAvailable(bookName)) return;
+    public void checkout(String bookName) {
+        if (!isAvailable(bookName)) return;
 
         Book checkedOutBook = findBook(bookName, availableBooks);
         checkedOutBooks.add(checkedOutBook);

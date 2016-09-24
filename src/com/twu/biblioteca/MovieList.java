@@ -3,12 +3,12 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class MovieList {
+class MovieList implements ItemList {
 
     private ArrayList<Movie> availableMovies = new ArrayList<Movie>();
     private ArrayList<Movie> checkedOutMovies = new ArrayList<Movie>();
 
-    boolean isMovieAvailable(String movieName) {
+    public boolean isAvailable(String movieName) {
         return isInList(movieName, availableMovies);
     }
 
@@ -25,8 +25,8 @@ class MovieList {
         return availableMovies;
     }
 
-    void checkout(String movieName) {
-        if(!isMovieAvailable(movieName)) return;
+    public void checkout(String movieName) {
+        if(!isAvailable(movieName)) return;
 
         Movie checkedOutMovie = findMovie(movieName, availableMovies);
         checkedOutMovies.add(checkedOutMovie);

@@ -16,14 +16,14 @@ public class BookListTest {
 
     @Test
     public void TellsIfABookIsAvailable() {
-        assertTrue(bookList.isBookAvailable("Clean Code"));
-        assertFalse(bookList.isBookAvailable("Unclean Code"));
+        assertTrue(bookList.isAvailable("Clean Code"));
+        assertFalse(bookList.isAvailable("Unclean Code"));
     }
 
     @Test
     public void ChecksOutABook() {
         bookList.checkout("Clean Code");
-        assertFalse(bookList.isBookAvailable("Clean Code"));
+        assertFalse(bookList.isAvailable("Clean Code"));
         assertEquals(1, bookList.allBooks().size());
     }
 
@@ -36,14 +36,14 @@ public class BookListTest {
     public void ReturnsABook() {
         bookList.checkout("Clean Code");
         bookList.returnBook("Clean Code");
-        assertTrue(bookList.isBookAvailable("Clean Code"));
+        assertTrue(bookList.isAvailable("Clean Code"));
         assertEquals(2, bookList.allBooks().size());
     }
 
     @Test
     public void OnlyReturnsCheckedOutBooks() {
         bookList.returnBook("Coding with Bob");
-        assertFalse(bookList.isBookAvailable("Coding with Bob"));
+        assertFalse(bookList.isAvailable("Coding with Bob"));
         assertEquals(2, bookList.allBooks().size());
     }
 }

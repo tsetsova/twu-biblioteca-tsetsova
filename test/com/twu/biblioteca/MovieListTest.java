@@ -22,14 +22,14 @@ public class MovieListTest {
 
     @Test
     public void TellsIfABookIsAvailable() {
-        assertTrue(movieList.isMovieAvailable("Mr. Robot"));
-        assertFalse(movieList.isMovieAvailable("I, Robot"));
+        assertTrue(movieList.isAvailable("Mr. Robot"));
+        assertFalse(movieList.isAvailable("I, Robot"));
     }
 
     @Test
     public void ChecksOutABook() {
         movieList.checkout("Mr. Robot");
-        assertFalse(movieList.isMovieAvailable("Mr. Robot"));
+        assertFalse(movieList.isAvailable("Mr. Robot"));
         assertEquals(1, movieList.allMovies().size());
     }
 
