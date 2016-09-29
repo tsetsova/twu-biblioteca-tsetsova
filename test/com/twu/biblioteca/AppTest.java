@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.itemLists.BookList;
+import com.twu.biblioteca.itemLists.ItemList;
 import com.twu.biblioteca.itemLists.MovieList;
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ public class AppTest {
 
     private TestConsole console = new TestConsole();
     private TestInput input = new TestInput();
-    private BookList bookList = new BookList();
+    private ItemList bookList = new ItemList();
     private MovieList movieList = new MovieList();
 
     private final App app = new App(console, input, bookList, movieList);

@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import java.util.HashMap;
+
 public class Movie implements Item{
 
     private String title;
@@ -18,7 +20,17 @@ public class Movie implements Item{
         return title + " | " + rating + " | "+ director + " | " + releaseYear;
     }
 
-    public boolean titleMatches(String otherTitle) {
+    @Override
+    public String getTitle() {
+        return null;
+    }
+
+    public Boolean titleMatches(String otherTitle) {
         return title.equals(otherTitle);
+    }
+
+    @Override
+    public HashMap<String, String> details() {
+        return null;
     }
 }

@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.itemLists.BookList;
+import com.twu.biblioteca.itemLists.ItemList;
 import com.twu.biblioteca.itemLists.MovieList;
 
 public class App {
@@ -8,14 +8,14 @@ public class App {
 
     private Console console;
     private Input input;
-    private BookList bookList;
+    private ItemList bookList;
     private MovieList movieList;
 
     public static void main(String[] args) {
-        new App(new RealConsole(), new UserInput(), new BookList(), new MovieList()).run();
+        new App(new RealConsole(), new UserInput(), new ItemList(), new MovieList()).run();
     }
 
-    App(Console console, Input input, BookList bookList, MovieList movieList) {
+    App(Console console, Input input, ItemList bookList, MovieList movieList) {
         this.console = console;
         this.input = input;
         this.bookList = bookList;

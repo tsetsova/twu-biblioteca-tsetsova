@@ -1,6 +1,7 @@
 package com.twu.biblioteca.itemLists;
 
 import com.twu.biblioteca.Book;
+import com.twu.biblioteca.Item;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -10,7 +11,7 @@ import static org.junit.Assert.*;
 
 public class BookListTest {
 
-    private static LinkedHashMap<Book, String> bookInformation = new LinkedHashMap<Book, String>();
+    private static LinkedHashMap<Item, String> bookInformation = new LinkedHashMap<Item, String>();
 
     @BeforeClass
         public static void populateBookList(){
@@ -20,7 +21,7 @@ public class BookListTest {
         }
 
 
-    private BookList bookList = new BookList(bookInformation);
+    private ItemList bookList = new ItemList(bookInformation);
 
     @Test
     public void TellsIfABookIsAvailable() {

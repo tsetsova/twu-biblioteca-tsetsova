@@ -5,7 +5,7 @@ import com.twu.biblioteca.Movie;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MovieList {
+public class MovieList implements ItemListInterface {
 
     private ArrayList<Movie> availableMovies = new ArrayList<Movie>();
     private ArrayList<Movie> checkedOutMovies = new ArrayList<Movie>();
@@ -48,6 +48,16 @@ public class MovieList {
         for(Movie movie : movies) {
             if( movie.titleMatches(movieName)) return true;
         }
+        return false;
+    }
+
+    @Override
+    public boolean checkoutItem(String name) {
+        return false;
+    }
+
+    @Override
+    public boolean returnItem(String bookName) {
         return false;
     }
 }

@@ -1,7 +1,7 @@
 package com.twu.biblioteca;
 
 
-import com.twu.biblioteca.itemLists.BookList;
+import com.twu.biblioteca.itemLists.ItemList;
 import com.twu.biblioteca.itemLists.MovieList;
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class BibliotecaTest {
 
     private TestConsole console = new TestConsole();
-    private BookList bookList = new BookList();
+    private ItemList bookList = new ItemList();
     private TestInput input = new TestInput();
     private MovieList movieList = new MovieList();
     private Biblioteca biblioteca = new Biblioteca(console, input, bookList, movieList);

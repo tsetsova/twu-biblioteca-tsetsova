@@ -1,5 +1,9 @@
 package com.twu.biblioteca;
 
-interface Item {
+import java.util.HashMap;
 
+public interface Item {
+    String getTitle();
+    Boolean titleMatches(String otherTitle);
+    HashMap<String, String> details();
 }

@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.itemLists.BookList;
+import com.twu.biblioteca.itemLists.ItemList;
 import com.twu.biblioteca.itemLists.MovieList;
 
 import java.util.ArrayList;
@@ -10,10 +10,10 @@ class Biblioteca {
 
     private final Console console;
     private final Input input;
-    private final BookList bookList;
+    private final ItemList bookList;
     private final MovieList movieList;
 
-    Biblioteca(Console console, Input input, BookList bookList, MovieList movieList) {
+    Biblioteca(Console console, Input input, ItemList bookList, MovieList movieList) {
         this.console = console;
         this.input = input;
         this.bookList = bookList;
