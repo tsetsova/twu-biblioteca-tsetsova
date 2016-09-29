@@ -1,5 +1,11 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.itemLists.BookList;
+import com.twu.biblioteca.itemLists.MovieList;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 class Biblioteca {
 
     private final Console console;
@@ -46,9 +52,12 @@ class Biblioteca {
     }
 
     private void listBooks() {
-
-        for (Book book : bookList.allBooks()) {
-            console.printToScreen(book.toString());
+        for(HashMap<String, String> book : bookList.availableItems()) {
+            ArrayList<String> details = new ArrayList<String>();
+            for (String key : book.keySet()) {
+                details.add(book.get(key));
+            }
+            console.printToScreen(details.get(1) + " | " + details.get(0) + " | " + details.get(2));
         }
     }
 
@@ -61,10 +70,9 @@ class Biblioteca {
     private void checkOutBook() {
         console.printToScreen("Welcome to checkout. Which book title would you like to checkout?");
         String bookName = input.read();
-        if (bookList.isBookAvailable(bookName)) {
-            bookList.checkout(bookName);
+        if (bookList.checkoutItem(bookName))
             console.printToScreen("Thank you! Enjoy the book!");
-        } else
+        else
             console.printToScreen("That book is not available.");
     }
 
@@ -82,11 +90,10 @@ class Biblioteca {
     private void returnBook() {
         console.printToScreen("Welcome to returns. Which book would you like to return?");
         String bookName = input.read();
-        if (bookList.isBookCheckedOut(bookName)) {
-            bookList.returnBook(bookName);
+        if (bookList.returnItem(bookName)) {
             console.printToScreen("Thank you for returning the book");
         } else {
-            console.printToScreen("That is not a valid book to return.");
+            console.printToScreen("That book is not available.");
         }
     }
 

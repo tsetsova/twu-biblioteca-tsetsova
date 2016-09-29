@@ -1,6 +1,8 @@
 package com.twu.biblioteca;
 
 
+import com.twu.biblioteca.itemLists.BookList;
+import com.twu.biblioteca.itemLists.MovieList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -96,17 +98,24 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void DisplaysUnsuccessfullReturnMessage(){
+    public void DisplaysUnsuccessfullReturnMessageIfBookIsCheckedOut(){
         input.addCommand("The Well-Grounded Rubyist");
         biblioteca.chooseOption(Commands.returnBook.name);
         assertEquals("Welcome to returns. Which book would you like to return?\n" +
-                "That is not a valid book to return.\n", console.printed());
+                     "That book is not available.\n", console.printed());
+    }
+
+    @Test
+    public void DisplaysUnsuccessfullReturnMessageIfBookDoesntExist(){
+        input.addCommand("The Well-Grounded Robot");
+        biblioteca.chooseOption(Commands.returnBook.name);
+        assertEquals("Welcome to returns. Which book would you like to return?\n" +
+                "That book is not available.\n", console.printed());
     }
 
     @Test
     public void DisplaysAnExitMessageWhenUserQuits() {
         biblioteca.chooseOption(Commands.quit.name);
-
         assertEquals("Goodbye!\n", console.printed());
     }
 

@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.itemLists.BookList;
+import com.twu.biblioteca.itemLists.MovieList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -41,7 +43,7 @@ public class AppTest {
     }
 
     @Test
-    public void userCanReturntABook() {
+    public void userCanReturnABook() {
         input.addCommand(Commands.listBooks.name);
         input.addCommand(Commands.checkoutBook.name);
         input.addCommand("Clean Code");
@@ -67,8 +69,8 @@ public class AppTest {
                 "Welcome to returns. Which book would you like to return?\n" +
                 "Thank you for returning the book\n" +
                 "The Well-Grounded Rubyist | David A. Black | 2009\n" +
-                "The Software Crafstman | Sandro Mancuso | 2014\n" +
                 "Clean Code | Robert Cecil Martin | 2008\n" +
+                "The Software Crafstman | Sandro Mancuso | 2014\n" +
                 "Goodbye!\n", console.printed());
     }
 

@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.itemLists.BookList;
+import com.twu.biblioteca.itemLists.MovieList;
+
 public class App {
 
 

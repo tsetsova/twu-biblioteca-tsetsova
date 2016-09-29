@@ -1,21 +1,26 @@
 package com.twu.biblioteca;
 
+import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.HashMap;
+
+import static org.junit.Assert.assertEquals;
 
 public class BookTest {
 
     private final Book book = new Book("The Well-Grounded Rubyist","David A. Black","2009");
+    private HashMap<String, String> details = new HashMap<String, String>();
 
-    @Test
-    public void FormatsCorrectly() {
-        assertEquals("The Well-Grounded Rubyist | David A. Black | 2009", book.toString());
+    @Before
+    public void populateList() {
+        details.put("Title: ","The Well-Grounded Rubyist");
+        details.put("Author: ", "David A. Black");
+        details.put("Publishing year: ", "2009");
     }
 
     @Test
-    public void MatchesExistingBookTitle() {
-        assertTrue(book.titleMatches("The Well-Grounded Rubyist"));
-        assertFalse(book.titleMatches("Coding with Bob"));
+    public void MatchesBookDetails() {
+        assertEquals(details,book.details());
     }
 }

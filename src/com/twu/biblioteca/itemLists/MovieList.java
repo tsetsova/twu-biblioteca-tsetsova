@@ -1,18 +1,20 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.itemLists;
+
+import com.twu.biblioteca.Movie;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class MovieList {
+public class MovieList {
 
     private ArrayList<Movie> availableMovies = new ArrayList<Movie>();
     private ArrayList<Movie> checkedOutMovies = new ArrayList<Movie>();
 
-    boolean isMovieAvailable(String movieName) {
+    public boolean isMovieAvailable(String movieName) {
         return isInList(movieName, availableMovies);
     }
 
-    MovieList() {
+    public MovieList() {
         availableMovies = new ArrayList<Movie>(Arrays.asList(
                 new Movie("Mr. Robot","8.7", "Sam Esmail", "2015"),
                 new Movie("The Man in the High Castle", "8.1", "Frank Spotnitz","2016"),
@@ -21,11 +23,11 @@ class MovieList {
 
     MovieList(ArrayList<Movie> listOfMovies) { availableMovies = listOfMovies; }
 
-    ArrayList<Movie> allMovies() {
+    public ArrayList<Movie> allMovies() {
         return availableMovies;
     }
 
-    void checkout(String movieName) {
+    public void checkout(String movieName) {
         if(!isMovieAvailable(movieName)) return;
 
         Movie checkedOutMovie = findMovie(movieName, availableMovies);

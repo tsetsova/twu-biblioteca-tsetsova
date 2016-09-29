@@ -1,5 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.itemLists;
 
+import com.twu.biblioteca.Movie;
 import org.junit.Test;
 
 import java.util.ArrayList;
