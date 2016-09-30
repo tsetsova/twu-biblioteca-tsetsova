@@ -1,5 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.ItemsTests;
 
+import com.twu.biblioteca.Items.Movie;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,6 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.UserIO;
 
-class RealConsole implements Console{
+public class RealConsole implements Console{
     public void printToScreen(String message) {
         System.out.println(message);
     }

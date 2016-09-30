@@ -1,7 +1,7 @@
 package com.twu.biblioteca.itemLists;
 
-import com.twu.biblioteca.Book;
-import com.twu.biblioteca.Item;
+import com.twu.biblioteca.Items.Book;
+import com.twu.biblioteca.Items.Item;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

@@ -1,5 +1,9 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.UserIO.Console;
+import com.twu.biblioteca.UserIO.Input;
+import com.twu.biblioteca.UserIO.RealConsole;
+import com.twu.biblioteca.UserIO.UserInput;
 import com.twu.biblioteca.itemLists.ItemList;
 import com.twu.biblioteca.itemLists.MovieList;
 

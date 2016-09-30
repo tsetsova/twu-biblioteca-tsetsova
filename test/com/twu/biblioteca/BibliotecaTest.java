@@ -1,6 +1,8 @@
 package com.twu.biblioteca;
 
 
+import com.twu.biblioteca.UserIOTests.TestConsole;
+import com.twu.biblioteca.UserIOTests.TestInput;
 import com.twu.biblioteca.itemLists.ItemList;
 import com.twu.biblioteca.itemLists.MovieList;
 import org.junit.Test;

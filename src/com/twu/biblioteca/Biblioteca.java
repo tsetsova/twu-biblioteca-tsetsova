@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Items.Movie;
+import com.twu.biblioteca.UserIO.Console;
+import com.twu.biblioteca.UserIO.Input;
 import com.twu.biblioteca.itemLists.ItemList;
 import com.twu.biblioteca.itemLists.MovieList;
 
