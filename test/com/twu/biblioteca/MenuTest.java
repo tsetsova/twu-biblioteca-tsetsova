@@ -4,24 +4,22 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.UserIOTests.TestConsole;
 import com.twu.biblioteca.UserIOTests.TestInput;
 import com.twu.biblioteca.itemLists.ItemList;
-import com.twu.biblioteca.itemLists.MovieList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 
-public class BibliotecaTest {
+public class MenuTest {
 
     private TestConsole console = new TestConsole();
-    private ItemList bookList = new ItemList();
     private TestInput input = new TestInput();
-    private MovieList movieList = new MovieList();
-    private Biblioteca biblioteca = new Biblioteca(console, input, bookList, movieList);
+    private ItemList itemlist = new ItemList();
+    private Menu biblioteca = new Menu(console, input, itemlist);
 
     @Test
     public void DisplaysAGreetingMessage() {
         biblioteca.greet();
-        assertEquals("Welcome to Biblioteca\n", console.printed());
+        assertEquals("Welcome to Menu\n", console.printed());
     }
 
     @Test
@@ -74,8 +72,8 @@ public class BibliotecaTest {
     public void DisplaysSuccesfullCheckoutMessage() {
         input.addCommand("The Well-Grounded Rubyist");
         biblioteca.chooseOption(Commands.checkoutBook.name);
-        assertEquals("Welcome to checkout. Which book title would you like to checkout?\n" +
-                "Thank you! Enjoy the book!\n", console.printed() );
+        assertEquals("Welcome to checkout. Which title would you like to checkout?\n" +
+                "Thank you! Enjoy!\n", console.printed() );
     }
 
 
@@ -83,8 +81,8 @@ public class BibliotecaTest {
     public void DisplaysUnsuccesfullCheckoutMessage() {
         input.addCommand("Coding with Bob");
         biblioteca.chooseOption(Commands.checkoutBook.name);
-        assertEquals("Welcome to checkout. Which book title would you like to checkout?\n" +
-                "That book is not available.\n", console.printed() );
+        assertEquals("Welcome to checkout. Which title would you like to checkout?\n" +
+                "That title is not available.\n", console.printed() );
     }
 
     @Test
@@ -93,26 +91,26 @@ public class BibliotecaTest {
         input.addCommand("The Well-Grounded Rubyist");
         biblioteca.chooseOption(Commands.checkoutBook.name);
         biblioteca.chooseOption(Commands.returnBook.name);
-        assertEquals("Welcome to checkout. Which book title would you like to checkout?\n" +
-                "Thank you! Enjoy the book!\n" +
-                "Welcome to returns. Which book would you like to return?\n" +
-                "Thank you for returning the book\n", console.printed());
+        assertEquals("Welcome to checkout. Which title would you like to checkout?\n" +
+                "Thank you! Enjoy!\n" +
+                "Welcome to returns. Which title would you like to return?\n" +
+                "Thank you!\n", console.printed());
     }
 
     @Test
     public void DisplaysUnsuccessfullReturnMessageIfBookIsCheckedOut(){
         input.addCommand("The Well-Grounded Rubyist");
         biblioteca.chooseOption(Commands.returnBook.name);
-        assertEquals("Welcome to returns. Which book would you like to return?\n" +
-                     "That book is not available.\n", console.printed());
+        assertEquals("Welcome to returns. Which title would you like to return?\n" +
+                     "That title is not available.\n", console.printed());
     }
 
     @Test
     public void DisplaysUnsuccessfullReturnMessageIfBookDoesntExist(){
         input.addCommand("The Well-Grounded Robot");
         biblioteca.chooseOption(Commands.returnBook.name);
-        assertEquals("Welcome to returns. Which book would you like to return?\n" +
-                "That book is not available.\n", console.printed());
+        assertEquals("Welcome to returns. Which title would you like to return?\n" +
+                "That title is not available.\n", console.printed());
     }
 
     @Test

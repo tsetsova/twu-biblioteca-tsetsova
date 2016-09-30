@@ -3,7 +3,6 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.UserIOTests.TestConsole;
 import com.twu.biblioteca.UserIOTests.TestInput;
 import com.twu.biblioteca.itemLists.ItemList;
-import com.twu.biblioteca.itemLists.MovieList;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -12,10 +11,9 @@ public class AppTest {
 
     private TestConsole console = new TestConsole();
     private TestInput input = new TestInput();
-    private ItemList bookList = new ItemList();
-    private MovieList movieList = new MovieList();
+    private ItemList itemList = new ItemList();
 
-    private final App app = new App(console, input, bookList, movieList);
+    private final App app = new App(console, input, itemList);
 
     @Test
     public void userCanCheckoutABook() {
@@ -25,7 +23,7 @@ public class AppTest {
         input.addCommand(Commands.listBooks.name);
         input.addCommand(Commands.quit.name);
         app.run();
-        assertEquals("Welcome to Biblioteca\n" +
+        assertEquals("Welcome to Menu\n" +
                      "Menu:\n" +
                      Commands.listBooks.toString() + "\n" +
                      Commands.listMovies.toString() + "\n" +
@@ -37,8 +35,8 @@ public class AppTest {
                      "The Well-Grounded Rubyist | David A. Black | 2009\n" +
                      "Clean Code | Robert Cecil Martin | 2008\n" +
                      "The Software Crafstman | Sandro Mancuso | 2014\n" +
-                     "Welcome to checkout. Which book title would you like to checkout?\n" +
-                     "Thank you! Enjoy the book!\n" +
+                     "Welcome to checkout. Which title would you like to checkout?\n" +
+                     "Thank you! Enjoy!\n" +
                      "The Well-Grounded Rubyist | David A. Black | 2009\n" +
                      "The Software Crafstman | Sandro Mancuso | 2014\n" +
                      "Goodbye!\n", console.printed());
@@ -54,7 +52,7 @@ public class AppTest {
         input.addCommand(Commands.listBooks.name);
         input.addCommand(Commands.quit.name);
         app.run();
-        assertEquals("Welcome to Biblioteca\n" +
+        assertEquals("Welcome to Menu\n" +
                 "Menu:\n" +
                 Commands.listBooks.toString() + "\n" +
                 Commands.listMovies.toString() + "\n" +
@@ -66,10 +64,10 @@ public class AppTest {
                 "The Well-Grounded Rubyist | David A. Black | 2009\n" +
                 "Clean Code | Robert Cecil Martin | 2008\n" +
                 "The Software Crafstman | Sandro Mancuso | 2014\n" +
-                "Welcome to checkout. Which book title would you like to checkout?\n" +
-                "Thank you! Enjoy the book!\n" +
-                "Welcome to returns. Which book would you like to return?\n" +
-                "Thank you for returning the book\n" +
+                "Welcome to checkout. Which title would you like to checkout?\n" +
+                "Thank you! Enjoy!\n" +
+                "Welcome to returns. Which title would you like to return?\n" +
+                "Thank you!\n" +
                 "The Well-Grounded Rubyist | David A. Black | 2009\n" +
                 "Clean Code | Robert Cecil Martin | 2008\n" +
                 "The Software Crafstman | Sandro Mancuso | 2014\n" +
@@ -84,7 +82,7 @@ public class AppTest {
         input.addCommand(Commands.listMovies.name);
         input.addCommand(Commands.quit.name);
         app.run();
-        assertEquals("Welcome to Biblioteca\n" +
+        assertEquals("Welcome to Menu\n" +
                 "Menu:\n" +
                 Commands.listBooks.toString() + "\n" +
                 Commands.listMovies.toString() + "\n" +
@@ -96,8 +94,8 @@ public class AppTest {
                 "Mr. Robot | 8.7 | Sam Esmail | 2015\n" +
                 "The Man in the High Castle | 8.1 | Frank Spotnitz | 2016\n" +
                 "Silicon Valley | 8.5 | Jim Kleverweis | 2014\n" +
-                "Welcome to checkout. Which movie title would you like to checkout?\n" +
-                "Thank you! Enjoy the movie!\n" +
+                "Welcome to checkout. Which title would you like to checkout?\n" +
+                "Thank you! Enjoy!\n" +
                 "The Man in the High Castle | 8.1 | Frank Spotnitz | 2016\n" +
                 "Silicon Valley | 8.5 | Jim Kleverweis | 2014\n" +
                 "Goodbye!\n", console.printed());

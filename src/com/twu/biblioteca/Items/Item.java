@@ -2,8 +2,16 @@ package com.twu.biblioteca.Items;
 
 import java.util.HashMap;
 
-public interface Item {
-    String getTitle();
-    Boolean titleMatches(String otherTitle);
-    HashMap<String, String> details();
+public abstract class Item {
+
+    private final String title;
+
+    Item(String title){
+      this.title = title;
+    }
+    public String getTitle() {return title;}
+
+    public Boolean titleMatches(String otherTitle) {return title.equals(otherTitle);}
+
+    public abstract HashMap<String,String> details();
 }

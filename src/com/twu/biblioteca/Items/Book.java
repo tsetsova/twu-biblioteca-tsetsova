@@ -1,25 +1,20 @@
 package com.twu.biblioteca.Items;
+import java.util.LinkedHashMap;
 
-import java.util.HashMap;
-
-public class Book implements Item {
-    private final String title;
+public class Book extends Item{
     private final String author;
     private final String publishingYear;
 
     public Book(String title, String author, String publishingYear) {
-        this.title = title;
+        super(title);
         this.author = author;
         this.publishingYear = publishingYear;
     }
 
-    public String getTitle() {return title;}
-
-    public Boolean titleMatches(String otherTitle) {return title.equals(otherTitle);}
-
-    public HashMap<String, String> details() {
-        HashMap<String, String> bookDetails = new HashMap<String, String>();
-        bookDetails.put("Title: ", title);
+    @Override
+    public LinkedHashMap<String, String> details() {
+        LinkedHashMap<String, String> bookDetails = new LinkedHashMap<String, String>();
+        bookDetails.put("Title: ", super.getTitle());
         bookDetails.put("Author: ", author);
         bookDetails.put("Publishing year: ", publishingYear);
         return bookDetails;

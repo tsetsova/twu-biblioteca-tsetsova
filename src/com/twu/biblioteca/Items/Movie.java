@@ -1,32 +1,22 @@
 package com.twu.biblioteca.Items;
+import java.util.LinkedHashMap;
 
-import java.util.HashMap;
-
-public class Movie implements Item{
-
-    private String title;
+public class Movie extends Item {
     private String rating;
     private String director;
     private String releaseYear;
 
     public Movie(String title, String rating, String director, String releaseYear) {
-        this.title = title;
+        super(title);
         this.rating = rating;
         this.director = director;
         this.releaseYear = releaseYear;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public Boolean titleMatches(String otherTitle) {
-        return title.equals(otherTitle);
-    }
-
-    public HashMap<String, String> details() {
-        HashMap<String, String> movieDetails = new HashMap<String, String>();
-        movieDetails.put("Title: ", title);
+    @Override
+    public LinkedHashMap<String, String> details() {
+        LinkedHashMap<String, String> movieDetails = new LinkedHashMap<String, String>();
+        movieDetails.put("Title: ", super.getTitle());
         movieDetails.put("Rating: ", rating);
         movieDetails.put("Director: ", director);
         movieDetails.put("Release Year: ", releaseYear);

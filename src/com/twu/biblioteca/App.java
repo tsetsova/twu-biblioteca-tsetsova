@@ -5,29 +5,26 @@ import com.twu.biblioteca.UserIO.Input;
 import com.twu.biblioteca.UserIO.RealConsole;
 import com.twu.biblioteca.UserIO.UserInput;
 import com.twu.biblioteca.itemLists.ItemList;
-import com.twu.biblioteca.itemLists.MovieList;
 
 public class App {
 
 
     private Console console;
     private Input input;
-    private ItemList bookList;
-    private MovieList movieList;
+    private ItemList itemList;
 
     public static void main(String[] args) {
-        new App(new RealConsole(), new UserInput(), new ItemList(), new MovieList()).run();
+        new App(new RealConsole(), new UserInput(), new ItemList()).run();
     }
 
-    App(Console console, Input input, ItemList bookList, MovieList movieList) {
+    App(Console console, Input input, ItemList itemList) {
         this.console = console;
         this.input = input;
-        this.bookList = bookList;
-        this.movieList = movieList;
+        this.itemList = itemList;
     }
 
     void run() {
-        Biblioteca biblioteca = new Biblioteca(console, input, bookList, movieList);
+        Menu biblioteca = new Menu(console, input, itemList);
         biblioteca.greet();
         biblioteca.menu();
 
