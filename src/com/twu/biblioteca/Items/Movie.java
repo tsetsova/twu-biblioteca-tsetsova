@@ -16,21 +16,20 @@ public class Movie implements Item{
         this.releaseYear = releaseYear;
     }
 
-    public String toString() {
-        return title + " | " + rating + " | "+ director + " | " + releaseYear;
-    }
-
-    @Override
     public String getTitle() {
-        return null;
+        return title;
     }
 
     public Boolean titleMatches(String otherTitle) {
         return title.equals(otherTitle);
     }
 
-    @Override
     public HashMap<String, String> details() {
-        return null;
+        HashMap<String, String> movieDetails = new HashMap<String, String>();
+        movieDetails.put("Title: ", title);
+        movieDetails.put("Rating: ", rating);
+        movieDetails.put("Director: ", director);
+        movieDetails.put("Release Year: ", releaseYear);
+        return movieDetails;
     }
 }

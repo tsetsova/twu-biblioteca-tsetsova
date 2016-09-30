@@ -6,7 +6,9 @@ import org.junit.Test;
 
 import java.util.HashMap;
 
+import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class BookTest {
 
@@ -23,5 +25,12 @@ public class BookTest {
     @Test
     public void MatchesBookDetails() {
         assertEquals(details,book.details());
+    }
+
+
+    @Test
+    public void MatchesTitlesCorrectly() {
+        assertTrue(book.titleMatches(details.get("Title: ")));
+        assertFalse(book.titleMatches("The Ruby Coder"));
     }
 }
