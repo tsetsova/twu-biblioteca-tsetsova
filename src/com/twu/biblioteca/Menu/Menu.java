@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Menu;
 
 import com.sun.deploy.util.StringUtils;
 import com.twu.biblioteca.UserIO.Console;
@@ -8,45 +8,54 @@ import com.twu.biblioteca.itemLists.ItemList;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-class Menu {
+public class Menu {
 
     private final Console console;
     private final Input input;
     private final ItemList itemList;
 
-    Menu(Console console, Input input, ItemList itemList) {
+    public Menu(Console console, Input input, ItemList itemList) {
         this.console = console;
         this.input = input;
         this.itemList = itemList;
     }
 
-    void greet() {
-        console.printToScreen("Welcome to Menu");
+    public void greet() {
+        console.printToScreen("Welcome to Biblioteca");
     }
 
-    void menu() {
+    public void menu() {
         console.printToScreen("Menu:");
         for(Commands command : Commands.values()) {
-            console.printToScreen(command.menuOption.toString());
+            console.printToScreen(command.toString());
         }
         console.printToScreen("Write the number of the option you want displayed.");
     }
 
-    void chooseOption(String command) {
-        if (command.equals(Commands.listBooks.name)) {
-            listItems("book");
-        } else if (command.equals(Commands.listMovies.name)) {
-            listItems("movie");
-        } else if (command.equals(Commands.checkoutBook.name)) {
-            checkOutItem("book");
-        } else if (command.equals(Commands.checkoutMovie.name)) {
-            checkOutItem("movie");
-        } else if (command.equals(Commands.returnBook.name)) {
-            returnItem("book");
-        } else if (command.equals(Commands.quit.name)) {
-            quit();
-        } else {
-            displayErrorMessage();
+    public void chooseOption(String command) {
+        switch (command) {
+            case "List Books":
+                listItems("book");
+                break;
+            case "List Movies":
+                listItems("movie");
+                break;
+            case "Checkout Book":
+                checkOutItem("book");
+                break;
+            case "Checkout Movie":
+                checkOutItem("movie");
+                break;
+            case "Return Book":
+                returnItem("book");
+                break;
+            case "Return Movie":
+                returnItem("movie");
+                break;
+            case "Quit":
+                quit();
+                break;
+            default: displayErrorMessage();
         }
     }
 
@@ -61,7 +70,7 @@ class Menu {
 
     private void listItems(String type) {
         for(HashMap<String, String> item : itemList.availableItems(type)) {
-            ArrayList<String> details = new ArrayList<String>();
+            ArrayList<String> details = new ArrayList<>();
             for (String key : item.keySet()) {
                 details.add(item.get(key));
             }

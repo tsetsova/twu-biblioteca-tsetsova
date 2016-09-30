@@ -1,4 +1,4 @@
-package com.twu.biblioteca.UserIOTests;
+package com.twu.biblioteca.TestUserIO;
 
 import com.twu.biblioteca.UserIO.Console;
 

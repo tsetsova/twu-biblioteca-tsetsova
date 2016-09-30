@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Menu.Commands;
+import com.twu.biblioteca.Menu.Menu;
 import com.twu.biblioteca.UserIO.Console;
 import com.twu.biblioteca.UserIO.Input;
 import com.twu.biblioteca.UserIO.RealConsole;
@@ -31,7 +33,7 @@ public class App {
         while(true) {
             String command = input.read();
             biblioteca.chooseOption(command);
-            if (command.equals(Commands.quit.name)) {break;}
+            if (command.equals(Commands.QUIT.toString())) {break;}
         }
 
     }

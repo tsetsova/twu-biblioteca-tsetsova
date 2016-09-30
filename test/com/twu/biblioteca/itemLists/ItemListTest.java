@@ -11,8 +11,8 @@ import static org.junit.Assert.*;
 
 public class ItemListTest {
 
-        private static LinkedHashMap<Movie, String> movies = new LinkedHashMap<Movie, String>();
-        private static LinkedHashMap<Book, String> books = new LinkedHashMap<Book, String>();
+        private static LinkedHashMap<Movie, String> movies = new LinkedHashMap<>();
+        private static LinkedHashMap<Book, String> books = new LinkedHashMap<>();
 
         @BeforeClass
         public static void populateLists(){
@@ -28,8 +28,8 @@ public class ItemListTest {
 
         @Test
         public void TellsIfAnItemIsAvailable() {
-//            assertTrue(itemList.isAvailable("Mr. Robot", "movie"));
-//            assertFalse(itemList.isAvailable("Many Robots", "movie"));
+            assertTrue(itemList.isAvailable("Mr. Robot", "movie"));
+            assertFalse(itemList.isAvailable("Many Robots", "movie"));
 
             assertTrue(itemList.isAvailable("Clean Code", "book"));
             assertFalse(itemList.isAvailable("Unclean Code", "book"));

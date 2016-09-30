@@ -1,8 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Menu;
 
 
-import com.twu.biblioteca.UserIOTests.TestConsole;
-import com.twu.biblioteca.UserIOTests.TestInput;
+import com.twu.biblioteca.TestUserIO.TestConsole;
+import com.twu.biblioteca.TestUserIO.TestInput;
 import com.twu.biblioteca.itemLists.ItemList;
 import org.junit.Test;
 
@@ -19,25 +19,27 @@ public class MenuTest {
     @Test
     public void DisplaysAGreetingMessage() {
         biblioteca.greet();
-        assertEquals("Welcome to Menu\n", console.printed());
+        assertEquals("Welcome to Biblioteca\n", console.printed());
     }
 
     @Test
     public void DisplaysAMenu() {
         biblioteca.menu();
         assertEquals("Menu:\n" +
-                     Commands.listBooks.toString() + "\n" +
-                     Commands.listMovies.toString() + "\n" +
-                     Commands.checkoutBook.toString() + "\n" +
-                     Commands.checkoutMovie.toString() + "\n" +
-                     Commands.returnBook.toString() + "\n" +
-                     Commands.quit.toString() + "\n" +
+                     Commands.LIST_BOOKS + "\n" +
+                     Commands.LIST_MOVIES + "\n" +
+                     Commands.CHECKOUT_BOOK + "\n" +
+                     Commands.CHECKOUT_MOVIE + "\n" +
+                     Commands.RETURN_BOOK + "\n" +
+                     Commands.RETURN_MOVIE + "\n" +
+                     Commands.QUIT + "\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
     }
 
     @Test
     public void ListsBooks() {
-        biblioteca.chooseOption(Commands.listBooks.name);
+        System.out.print(Commands.LIST_BOOKS.toString());
+        biblioteca.chooseOption(Commands.LIST_BOOKS.toString());
 
         assertEquals("The Well-Grounded Rubyist | David A. Black | 2009\n" +
                 "Clean Code | Robert Cecil Martin | 2008\n" +
@@ -46,7 +48,7 @@ public class MenuTest {
 
     @Test
     public void ListsMovies() {
-        biblioteca.chooseOption(Commands.listMovies.name);
+        biblioteca.chooseOption(Commands.LIST_MOVIES.toString());
 
         assertEquals("Mr. Robot | 8.7 | Sam Esmail | 2015\n" +
                      "The Man in the High Castle | 8.1 | Frank Spotnitz | 2016\n" +
@@ -59,19 +61,20 @@ public class MenuTest {
 
         assertEquals("Please choose a valid menu option!\n" +
                      "Menu:\n" +
-                     Commands.listBooks.toString() + "\n" +
-                     Commands.listMovies.toString() + "\n" +
-                     Commands.checkoutBook.toString() + "\n" +
-                     Commands.checkoutMovie.toString() + "\n" +
-                     Commands.returnBook.toString() + "\n" +
-                     Commands.quit.toString() + "\n" +
+                     Commands.LIST_BOOKS.toString() + "\n" +
+                     Commands.LIST_MOVIES.toString() + "\n" +
+                     Commands.CHECKOUT_BOOK.toString() + "\n" +
+                     Commands.CHECKOUT_MOVIE.toString() + "\n" +
+                     Commands.RETURN_BOOK.toString() + "\n" +
+                     Commands.RETURN_MOVIE.toString() + "\n" +
+                     Commands.QUIT.toString() + "\n" +
                      "Write the number of the option you want displayed.\n", console.printed());
     }
 
     @Test
     public void DisplaysSuccesfullCheckoutMessage() {
         input.addCommand("The Well-Grounded Rubyist");
-        biblioteca.chooseOption(Commands.checkoutBook.name);
+        biblioteca.chooseOption(Commands.CHECKOUT_BOOK.toString());
         assertEquals("Welcome to checkout. Which title would you like to checkout?\n" +
                 "Thank you! Enjoy!\n", console.printed() );
     }
@@ -80,7 +83,7 @@ public class MenuTest {
     @Test
     public void DisplaysUnsuccesfullCheckoutMessage() {
         input.addCommand("Coding with Bob");
-        biblioteca.chooseOption(Commands.checkoutBook.name);
+        biblioteca.chooseOption(Commands.CHECKOUT_BOOK.toString());
         assertEquals("Welcome to checkout. Which title would you like to checkout?\n" +
                 "That title is not available.\n", console.printed() );
     }
@@ -89,8 +92,8 @@ public class MenuTest {
     public void DisplaysSuccessfullReturnMessage(){
         input.addCommand("The Well-Grounded Rubyist");
         input.addCommand("The Well-Grounded Rubyist");
-        biblioteca.chooseOption(Commands.checkoutBook.name);
-        biblioteca.chooseOption(Commands.returnBook.name);
+        biblioteca.chooseOption(Commands.CHECKOUT_BOOK.toString());
+        biblioteca.chooseOption(Commands.RETURN_BOOK.toString());
         assertEquals("Welcome to checkout. Which title would you like to checkout?\n" +
                 "Thank you! Enjoy!\n" +
                 "Welcome to returns. Which title would you like to return?\n" +
@@ -100,7 +103,7 @@ public class MenuTest {
     @Test
     public void DisplaysUnsuccessfullReturnMessageIfBookIsCheckedOut(){
         input.addCommand("The Well-Grounded Rubyist");
-        biblioteca.chooseOption(Commands.returnBook.name);
+        biblioteca.chooseOption(Commands.RETURN_BOOK.toString());
         assertEquals("Welcome to returns. Which title would you like to return?\n" +
                      "That title is not available.\n", console.printed());
     }
@@ -108,14 +111,14 @@ public class MenuTest {
     @Test
     public void DisplaysUnsuccessfullReturnMessageIfBookDoesntExist(){
         input.addCommand("The Well-Grounded Robot");
-        biblioteca.chooseOption(Commands.returnBook.name);
+        biblioteca.chooseOption(Commands.RETURN_BOOK.toString());
         assertEquals("Welcome to returns. Which title would you like to return?\n" +
                 "That title is not available.\n", console.printed());
     }
 
     @Test
     public void DisplaysAnExitMessageWhenUserQuits() {
-        biblioteca.chooseOption(Commands.quit.name);
+        biblioteca.chooseOption(Commands.QUIT.toString());
         assertEquals("Goodbye!\n", console.printed());
     }
 

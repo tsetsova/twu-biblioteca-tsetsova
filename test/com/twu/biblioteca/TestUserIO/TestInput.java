@@ -1,11 +1,11 @@
-package com.twu.biblioteca.UserIOTests;
+package com.twu.biblioteca.TestUserIO;
 
 import com.twu.biblioteca.UserIO.Input;
 
 import java.util.LinkedList;
 
 public class TestInput implements Input {
-    private LinkedList<String> commands = new LinkedList<String>();
+    private LinkedList<String> commands = new LinkedList<>();
 
     public void addCommand(String command) {
         this.commands.add(command);
