@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Items.Movie;
 import com.twu.biblioteca.UserIO.Console;
 import com.twu.biblioteca.UserIO.Input;
 import com.twu.biblioteca.itemLists.ItemList;
@@ -65,8 +64,12 @@ class Biblioteca {
     }
 
     private void listMovies() {
-        for (Movie movie : movieList.allMovies()) {
-            console.printToScreen(movie.toString());
+        for(HashMap<String, String> book : movieList.availableItems()) {
+            ArrayList<String> details = new ArrayList<String>();
+            for (String key : book.keySet()) {
+                details.add(book.get(key));
+            }
+            console.printToScreen(details.get(1) + " | " + details.get(0) + " | " + details.get(2) + " | " + details.get(3));
         }
     }
 
@@ -82,10 +85,9 @@ class Biblioteca {
     private void checkOutMovie() {
         console.printToScreen("Welcome to checkout. Which movie title would you like to checkout?");
         String movieName = input.read();
-        if (movieList.isMovieAvailable(movieName)) {
-            movieList.checkout(movieName);
+        if (bookList.checkoutItem(movieName))
             console.printToScreen("Thank you! Enjoy the movie!");
-        } else
+        else
             console.printToScreen("That movie is not available.");
     }
 
@@ -97,6 +99,16 @@ class Biblioteca {
             console.printToScreen("Thank you for returning the book");
         } else {
             console.printToScreen("That book is not available.");
+        }
+    }
+
+    private void returnMovie() {
+        console.printToScreen("Welcome to returns. Which movie would you like to return?");
+        String movieName = input.read();
+        if (movieList.returnItem(movieName)) {
+            console.printToScreen("Thank you for returning the movie");
+        } else {
+            console.printToScreen("That movie is not available.");
         }
     }
 
