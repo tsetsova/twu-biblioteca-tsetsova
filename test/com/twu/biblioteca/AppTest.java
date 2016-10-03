@@ -84,6 +84,32 @@ public class AppTest {
                     "Goodbye!\n", console.printed());
     }
 
+    @Test
+    public void userCanReturnAMovie() {
+        input.addCommand(Commands.LIST_MOVIES.toString());
+        input.addCommand(Commands.CHECKOUT_MOVIE.toString());
+        input.addCommand("Mr. Robot");
+        input.addCommand(Commands.RETURN_MOVIE.toString());
+        input.addCommand("Mr. Robot");
+        input.addCommand(Commands.LIST_MOVIES.toString());
+        input.addCommand(Commands.QUIT.toString());
+        app.run();
+        assertEquals("Welcome to Biblioteca\n" +
+                menu() +
+                "Write the number of the option you want displayed.\n" +
+                "Mr. Robot | 8.7 | Sam Esmail | 2015\n" +
+                "The Man in the High Castle | 8.1 | Frank Spotnitz | 2016\n" +
+                "Silicon Valley | 8.5 | Jim Kleverweis | 2014\n" +
+                "Welcome to checkout. Which title would you like to checkout?\n" +
+                "Thank you! Enjoy!\n" +
+                "Welcome to returns. Which title would you like to return?\n" +
+                "Thank you!\n" +
+                "Mr. Robot | 8.7 | Sam Esmail | 2015\n" +
+                "The Man in the High Castle | 8.1 | Frank Spotnitz | 2016\n" +
+                "Silicon Valley | 8.5 | Jim Kleverweis | 2014\n" +
+                "Goodbye!\n", console.printed());
+    }
+
     private String menu() {
         return "Menu:\n" +
                 Commands.LIST_BOOKS.toString() + "\n" +

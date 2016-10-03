@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dd7474c-6cc0-4120-af74-47c3679aa08c" name="Default" comment="refactors Menu and Commands">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu/Commands.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Commands.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/MenuOption.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu/Menu.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/Menu/MenuTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/UserIOTests/TestConsole.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/TestUserIO/TestConsole.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/UserIOTests/TestInput.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/TestUserIO/TestInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/App.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/AppTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/AppTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/itemLists/ItemListTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/itemLists/ItemListTest.java" />
     </list>
@@ -54,10 +45,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MenuTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Menu/MenuTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="-1221">
               <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
               <folding />
             </state>
@@ -87,10 +78,12 @@
       <file leaf-file-name="ItemListTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/itemLists/ItemListTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
+            <state relative-caret-position="279">
+              <caret line="20" column="96" selection-start-line="20" selection-start-column="96" selection-end-line="20" selection-end-column="96" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1122#1123#0" expanded="true" />
+                <element signature="e#1202#1203#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,6 +110,16 @@
                 <element signature="e#1834#1835#0" expanded="true" />
                 <element signature="e#1883#1884#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/AppTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="106" column="57" selection-start-line="106" selection-start-column="57" selection-end-line="106" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -155,16 +158,6 @@
               <folding>
                 <element signature="e#485#501#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Items/Item.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -234,7 +227,6 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/itemLists/ItemList.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/TestUserIO/TestConsole.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/MenuTest.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/AppTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/App.java" />
         <option value="$PROJECT_DIR$/src/Menu/Menu.java" />
@@ -242,9 +234,10 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Commands.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Menu/Commands.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/TestUserIO/TestInput.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/itemLists/ItemListTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Menu/Menu.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/Menu/MenuTest.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/itemLists/ItemListTest.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/AppTest.java" />
       </list>
     </option>
   </component>
@@ -354,6 +347,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="biblioteca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twu-biblioteca-tsetsova" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="biblioteca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ItemsTests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="biblioteca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twu-biblioteca-tsetsova" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="biblioteca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itemLists" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -602,33 +639,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MenuTest">
-    <configuration default="false" name="MenuTest.DisplaysAMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.Menu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="biblioteca" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.Menu" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.Menu.MenuTest" />
-      <option name="METHOD_NAME" value="DisplaysAMenu" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.All Tests">
     <configuration default="false" name="MenuTest.ListsBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -725,6 +736,32 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="biblioteca" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="AppTest.userCanReturnAMovie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="biblioteca" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.AppTest" />
+      <option name="METHOD_NAME" value="userCanReturnAMovie" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1164,19 +1201,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All Tests" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MenuTest.DisplaysAMenu" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MenuTest.ListsBooks" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MenuTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.AppTest.userCanCheckoutABook" />
-      <item index="5" class="java.lang.String" itemvalue="Application.App" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MenuTest.ListsBooks" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MenuTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.AppTest.userCanCheckoutABook" />
+      <item index="4" class="java.lang.String" itemvalue="Application.App" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.AppTest.userCanReturnAMovie" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MenuTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.App" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.AppTest.userCanCheckoutABook" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MenuTest.ListsBooks" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MenuTest.DisplaysAMenu" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.AppTest.userCanReturnAMovie" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MenuTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.App" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.AppTest.userCanCheckoutABook" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MenuTest.ListsBooks" />
       </list>
     </recent_temporary>
   </component>
@@ -1194,7 +1231,7 @@
       <option name="presentableId" value="Default" />
       <updated>1474105285140</updated>
       <workItem from="1475001435138" duration="45192000" />
-      <workItem from="1475184512673" duration="25079000" />
+      <workItem from="1475184512673" duration="25871000" />
     </task>
     <task id="LOCAL-00001" summary="Displays greeting message">
       <created>1474128224944</created>
@@ -1378,43 +1415,50 @@
       <option name="project" value="LOCAL" />
       <updated>1475245010064</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="refactors Menu and Commands">
+      <created>1475261946367</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1475261946367</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2016.09.30 at 19h 46m 01s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.09.30 at 19h 54m 26s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.09.30 at 19h 56m 42s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.09.30 at 19h 57m 38s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.09.30 at 19h 57m 46s.xml">
-      <configuration name="All Tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_Tests - 2016.09.30 at 19h 58m 39s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_Tests - 2016.09.30 at 19h 58m 49s.xml">
       <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_userCanCheckoutABook - 2016.09.30 at 19h 39m 38s.xml">
-      <configuration name="AppTest.userCanCheckoutABook" configurationId="JUnit" />
+    <history-entry file="All_Tests - 2016.10.03 at 09h 09m 18s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AppTest_userCanCheckoutABook - 2016.09.30 at 19h 54m 14s.xml">
-      <configuration name="AppTest.userCanCheckoutABook" configurationId="JUnit" />
+    <history-entry file="All_Tests - 2016.10.03 at 09h 22m 01s.xml">
+      <configuration name="All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest_userCanReturnAMovie - 2016.10.03 at 09h 19m 14s.xml">
+      <configuration name="AppTest.userCanReturnAMovie" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest_userCanReturnAMovie - 2016.10.03 at 09h 21m 16s.xml">
+      <configuration name="AppTest.userCanReturnAMovie" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest_userCanReturnAMovie - 2016.10.03 at 09h 21m 39s.xml">
+      <configuration name="AppTest.userCanReturnAMovie" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AppTest_userCanReturnAMovie - 2016.10.03 at 09h 21m 55s.xml">
+      <configuration name="AppTest.userCanReturnAMovie" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MenuTest - 2016.09.30 at 19h 58m 57s.xml">
       <configuration name="MenuTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MenuTest - 2016.10.03 at 09h 09m 14s.xml">
+      <configuration name="MenuTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70271000" />
+    <option name="totallyTimeSpent" value="71063000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
@@ -1831,14 +1875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/AppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="68" column="61" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Items/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1905,16 +1941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/itemLists/ItemListTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Menu/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1928,8 +1954,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/Menu/MenuTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="-1221">
           <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/itemLists/ItemListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="20" column="96" selection-start-line="20" selection-start-column="96" selection-end-line="20" selection-end-column="96" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1202#1203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="106" column="57" selection-start-line="106" selection-start-column="57" selection-end-line="106" selection-end-column="57" />
           <folding />
         </state>
       </provider>
